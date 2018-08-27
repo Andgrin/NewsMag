@@ -89,9 +89,13 @@
 
 
 
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// ------------------    PAGE STYLES    -------------------
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-
-
+//
+//  PAGE HEADER
+//
 .header-content 
 	position: fixed
 	width: 100%
@@ -114,7 +118,6 @@
 				display: table-cell
 				vertical-align: middle
 				font-family: 'Montserrat-Regular', sans-serif
-				// font-size: 19px
 				text-transform: uppercase
 				strong
 					font-family: 'Montserrat-Bold', sans-serif
@@ -143,30 +146,24 @@
 					border: 1px solid #484848
 					box-shadow: 3px 3px 0 0 rgba(0,0,0,.1)
 					background-color: #ffffff
-					// min-width: 184px
 					.list-item
 						border-bottom: 1px solid #e7e7e7
 						&:hover
 							background-color: #e7e7e7
 					.list-item__link
-						// height: 44px
 						width: 100%
 						text-decoration: none
 						color: #000000
 						display: table
 						font-family: 'OpenSans-Bold'
-						// font-size: 12px
 						text-transform: uppercase
 						.link__logo, .link__name
 							display: table-cell
 							vertical-align: middle
 						.link__logo	
 							border-right: 1px solid #e7e7e7
-							// width: 45px
 							text-align: center
-							// font-size: 20px
 						.link__name
-							// padding-left: 22px
 
 				&:last-child
 					border-right: none
@@ -179,6 +176,11 @@
 					.list-item__sublist
 						display: block !important
 
+
+
+//
+//  SIDE NAVIGATION
+//	
 .header__side-nav
 	background-color: #fbfbfb
 	border-right: 1px solid #e7e7e7
@@ -216,10 +218,11 @@
 							font-size: 14px
 							text-transform: uppercase
 							padding-right: 20px
-				
-				
+							
 
-
+//
+//   NEWS LIST with Cards 
+//
 .cards-container 
 	column-break-inside: avoid
 	.card 
@@ -274,34 +277,23 @@
 		.card__body
 			border-left: 1px solid #e7e7e7
 			border-right: 1px solid #e7e7e7
-			// padding: 28px 28px 24px
 			.card__info
 				display: flex
 				justify-content: flex-start
 				font-family: 'OpenSans-Semibold'
-				// font-size: 12px
 				color: #9d9d9d
-				// margin-bottom: 20px
 				.date, .comments
 					display: table
 					padding-right: 10px
 				.icon, .text
 					display: table-cell
 					vertical-align: middle
-				// .icon
-				// 	width: 14px
-				// 	height: 14px
-				// 	padding: 0 6px 0 2px
 			.card__title
 				font-family: 'Montserrat-Bold'
-				// font-size: 26px
 				color: #313131
-				// margin: 22px 0 12px
 			.card__content
 				font-family: 'OpenSans-Regular', sans-serif
-				// font-size: 14px
 				color: #626262
-				// line-height: 22px
 
 		&:hover
 			.img-top__show-on-hover
@@ -311,6 +303,9 @@
 
 
 
+//
+//   SINGLE NEWS Preview
+//
 .single-news
 	display: flex
 	justify-content: space-between
@@ -376,20 +371,14 @@
 							line-height: 18px
 
 	.news-nav
-		// min-width: 70px
-		// max-width: 70px
-		// margin-left: 30px
 		.news-nav__buttons
 			border: 1px solid #e7e7e7
 			.news-nav__button
 				border: none
 				border-radius: 0
 				outline: none
-				// width: 68px
-				// height: 66px
 				background-color: #ffffff
 				color: #676767
-				// font-size: 18px
 				border-bottom: 1px solid #e7e7e7
 				cursor: pointer
 				&:last-child
@@ -405,11 +394,16 @@
 
 
 
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// ----------------    PAGE WIDTH -767    -----------------
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
 
 @media screen and (max-width: 767px)
 	.sm-hidden
-		display: none
-
+		display: none !important
+	
+	//  PAGE HEADER
 	.header-content 
 		position: absolute
 		height: 40px
@@ -446,6 +440,7 @@
 							.link__name
 								padding-left: 14px
 
+	//  SIDE NAVIGATION
 	.header__side-nav
 		position: absolute
 		top: 40px
@@ -464,12 +459,14 @@
 				margin-bottom: -4px
 		&.show
 			transform: translate(0, 0)
+	
 	.main-content
 		padding-top: 40px
 
 	.news__container
 		padding: 10px
 
+	//   NEWS LIST with Cards 
 	.cards-container 
 		@include column-count(1)
 		// column-gap: 20px
@@ -491,6 +488,7 @@
 					font-size: 13px
 					line-height: 18px
 
+	//   SINGLE NEWS Preview
 	.single-news
 		.news-container
 			.news-title-img
@@ -536,12 +534,15 @@
 
 
 
-
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// ---------------    PAGE WIDTH 768 - 992    -------------
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
   
 @media screen and (min-width: 768px) and (max-width: 992px)
 	.md-hidden
 		display: none !important
 
+	//  PAGE HEADER
 	.header-content 
 		position: fixed
 		height: 60px
@@ -578,6 +579,7 @@
 							.link__name
 								padding-left: 22px
 
+	//  SIDE NAVIGATION
 	.header__side-nav
 		position: fixed
 		top: 60px
@@ -595,12 +597,14 @@
 				margin-bottom: -4px
 		&.show
 			transform: translate(0, 0)
+	
 	.main-content
 		padding-top: 60px
 
 	.news__container
 		padding: 20px
 
+	//   NEWS LIST with Cards 
 	.cards-container 
 		@include column-count(2)
 		column-gap: 20px
@@ -622,6 +626,7 @@
 					font-size: 14px
 					line-height: 22px
 
+	//   SINGLE NEWS Preview
 	.single-news
 		.news-container
 			.news-title-img
@@ -685,7 +690,7 @@
 	.lg-hidden
 		display: none !important
 
-	
+	//  PAGE HEADER
 	.header-content 
 		position: fixed
 		height: 78px
@@ -721,6 +726,7 @@
 							.link__name
 								padding-left: 22px
 
+	//  SIDE NAVIGATION
 	.header__side-nav
 		display: block !important
 		position: fixed
@@ -806,6 +812,7 @@
 	.news__container
 		padding: 30px
 
+	//   NEWS LIST with Cards 
 	.cards-container 
 		@include column-count(3)
 		column-gap: 30px
@@ -827,7 +834,7 @@
 					font-size: 14px
 					line-height: 22px
 
-
+	//   SINGLE NEWS Preview
 	.single-news
 		.news-container
 			.news-title-img
