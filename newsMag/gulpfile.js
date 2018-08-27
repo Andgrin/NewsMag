@@ -9,13 +9,6 @@ var merge = require('merge-stream');
 var uglify = require('gulp-uglify');
 var pump = require('pump');
 
-// var isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
-
-// gulp.task('styles', function(){
-//    return gulp.src('./src/css/*.css')
-//       .pipe(minifyCSS())
-//       .pipe(gulp.dest('depl/css'))
-// });
 
 gulp.task('styles', function() {
 
