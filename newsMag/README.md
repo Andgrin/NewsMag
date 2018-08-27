@@ -14,3 +14,5 @@ For Run json-server in:
 $ json-server --watch db.json --port 3004
 ```
 
+
+For check pixel-perfect open indexOld.html
