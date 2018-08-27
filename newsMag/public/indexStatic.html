@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Extraordinary</title>
+
+		<link rel="stylesheet" href="css//styles.css">
+		
+		<!-- <script>
+			new NewsPage();
+		</script> -->
+
+
+   </head>
+
+   <body>
+      <!-- SVG Icons -->
+      <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+         <defs>
+            <symbol id="icon-close-light" viewBox="0 0 32 32">
+               <title>close-light</title>
+               <path d="M30.233 28.859c0.393 0.393 0.393 1.178 0 1.767-0.393 0.393-1.178 0.393-1.571 0l-13.35-13.742c-0.393-0.393-0.393-1.178 0-1.767l13.35-13.35c0.393-0.393 1.178-0.393 1.571 0s0.393 1.178 0 1.767l-12.172 12.564 12.172 12.761z"></path>
+               <path d="M1.571 28.859c-0.393 0.393-0.393 1.178 0 1.767 0.393 0.393 1.178 0.393 1.571 0l13.35-13.546c0.393-0.393 0.393-1.178 0-1.767l-13.35-13.546c-0.393-0.393-1.178-0.393-1.571 0s-0.393 1.178 0 1.767l12.172 12.761-12.172 12.564z"></path>
+            </symbol>
+            <symbol id="icon-next-light" viewBox="0 0 18 32">
+               <title>next-light</title>
+               <path d="M1.725 28.359c-0.383 0.383-0.383 1.15 0 1.725 0.383 0.383 1.15 0.383 1.533 0l13.030-13.222c0.383-0.383 0.383-1.15 0-1.725l-13.030-13.222c-0.383-0.383-1.15-0.383-1.533 0s-0.383 1.15 0 1.725l11.88 12.455-11.88 12.263z"></path>
+            </symbol>
+            <symbol id="icon-prev-light" viewBox="0 0 18 32">
+               <title>prev-light</title>
+               <path d="M16.6 29c0.4 0.4 0.4 1.2 0 1.8-0.4 0.4-1.2 0.4-1.6 0l-13.6-14c-0.4-0.4-0.4-1.2 0-1.8l13.6-13.6c0.4-0.4 1.2-0.4 1.6 0s0.4 1.2 0 1.8l-12.4 12.8 12.4 13z"></path>
+            </symbol>
+            <symbol id="icon-photo" viewBox="0 0 40 32">
+               <title>photo</title>
+               <path d="M19.992 12c-3.314 0-6 2.686-6 6s2.686 6 6 6c3.314 0 6-2.686 6-6v0c0-3.314-2.686-6-6-6v0zM35.992 6h-4.8c-0.72-0.034-1.326-0.492-1.576-1.128l-0.004-0.012-1.22-3.72c-0.258-0.654-0.872-1.113-1.597-1.14l-0.003-0h-13.6c-0.72 0.034-1.326 0.492-1.576 1.128l-0.004 0.012-1.22 3.724c-0.259 0.652-0.873 1.11-1.597 1.136l-0.003 0h-4.8c-2.209 0-4 1.791-4 4v0 18c0 2.209 1.791 4 4 4v0h32c2.209 0 4-1.791 4-4v0-18c0-2.209-1.791-4-4-4v0zM19.992 28c-5.523 0-10-4.477-10-10s4.477-10 10-10c5.523 0 10 4.477 10 10v0c0 5.523-4.477 10-10 10v0zM34.592 12.8c-0.773-0-1.4-0.627-1.4-1.4s0.627-1.4 1.4-1.4c0.773 0 1.4 0.627 1.4 1.4 0 0.004-0 0.008-0 0.013v-0.001c-0.009 0.764-0.628 1.38-1.392 1.384h-0z"></path>
+            </symbol>
+            <symbol id="icon-logo" viewBox="0 0 36 32">
+               <title>logo</title>
+               <path d="M0 32v-32h13.714v13.913h8.348v-13.913h13.714v32h-35.776z"></path>
+            </symbol>
+            <symbol id="icon-video" viewBox="0 0 45 32">
+               <title>video</title>
+               <path d="M44.8 4.571v-2.743c0-1.010-0.819-1.829-1.829-1.829v0h-41.143c-1.010 0-1.829 0.819-1.829 1.829v0 2.743h4.571v4.571h-4.571v4.571h4.571v4.571h-4.571v4.571h4.571v4.571h-4.571v2.743c0 1.010 0.819 1.829 1.829 1.829v0h41.143c1.010 0 1.829-0.819 1.829-1.829v0-2.743h-4.571v-4.571h4.571v-4.571h-4.571v-4.571h4.571v-4.571h-4.571v-4.571h4.571zM17.371 22.857v-13.714l11.429 6.857z"></path>
+            </symbol>
+            <symbol id="icon-busines" viewBox="0 0 36 32">
+               <title>busines</title>
+               <path d="M32 5.333h-1.778v26.667h1.778c1.964 0 3.556-1.592 3.556-3.556v0-19.556c0-1.964-1.592-3.556-3.556-3.556v0zM0 8.889v19.556c0 1.964 1.592 3.556 3.556 3.556v0h1.778v-26.667h-1.778c-1.964 0-3.556 1.592-3.556 3.556v0zM23.822 1.611c-1.209-0.562-3.143-1.611-6.044-1.611s-4.836 1.067-6.044 1.611v3.723h-3.911v26.667h19.911v-26.667h-3.911v-3.723zM21.689 5.333h-7.822v-2.361c1.151-0.522 2.495-0.826 3.911-0.826s2.76 0.304 3.972 0.85l-0.061-0.025v2.375z"></path>
+            </symbol>
+            <symbol id="icon-airfly" viewBox="0 0 34 32">
+               <title>airfly</title>
+               <path d="M9.106 32h3.404l7.639-13.617h8.786s5.106 0 5.106-2.383-5.106-2.383-5.106-2.383h-8.79l-7.636-13.617h-3.404l4.235 13.617h-6.107l-3.83-3.404h-3.404l2.723 5.787-2.723 5.787h3.404l3.83-3.404h6.104z"></path>
+            </symbol>
+            <symbol id="icon-trash" viewBox="0 0 33 32">
+               <title>trash</title>
+               <path d="M31.851 3.935c-0.564-0.488-3.63-2.808-4.19-3.303-0.545-0.397-1.227-0.636-1.965-0.636-0.051 0-0.102 0.001-0.152 0.003l0.007-0h-18.335c-0.040-0.002-0.087-0.003-0.134-0.003-0.738 0-1.42 0.238-1.974 0.642l0.010-0.007c-0.571 0.495-3.638 2.815-4.19 3.303-0.56 0.448-0.915 1.131-0.915 1.897 0 0.137 0.011 0.272 0.033 0.403l-0.002-0.014c0.152 1.048 3.688 24.709 3.688 24.709 0.245 0.622 0.83 1.060 1.521 1.086l0.003 0h22.286c0.693-0.026 1.279-0.463 1.52-1.074l0.004-0.012s3.52-23.676 3.672-24.709c0.020-0.117 0.031-0.252 0.031-0.389 0-0.766-0.355-1.449-0.91-1.893l-0.005-0.004zM16.381 20.51c-6.187 0-7.512-8.762-7.787-10.56h3.497c0.545 2.629 1.73 7.131 4.29 7.131s3.76-4.503 4.29-7.131h3.497c-0.274 1.802-1.6 10.56-7.787 10.56zM2.979 6.476l4.19-4.381h18.419l4.19 4.381h-26.8z"></path>
+            </symbol>
+            <symbol id="icon-options" viewBox="0 0 32 32">
+               <title>options</title>
+               <path d="M28.922 16c0-1.996 1.227-3.57 3.078-4.651-0.369-1.223-0.817-2.278-1.362-3.272l0.044 0.087c-2.072 0.541-3.752-0.27-5.162-1.68s-1.844-3.090-1.299-5.166c-0.907-0.502-1.962-0.95-3.066-1.287l-0.119-0.031c-1.082 1.851-3.048 3.078-5.032 3.078s-3.954-1.23-5.036-3.078c-1.223 0.369-2.278 0.817-3.272 1.362l0.087-0.044c0.541 2.072 0.11 3.752-1.299 5.166s-3.090 2.225-5.166 1.68c-0.501 0.906-0.949 1.96-1.287 3.062l-0.031 0.119c1.851 1.082 3.078 2.667 3.078 4.651s-1.227 3.954-3.078 5.036c0.369 1.223 0.817 2.278 1.362 3.272l-0.044-0.087c2.072-0.541 3.752-0.11 5.166 1.299s1.844 3.090 1.299 5.166c0.907 0.502 1.962 0.95 3.066 1.287l0.119 0.031c1.082-1.848 3.048-3.078 5.032-3.078s3.95 1.227 5.032 3.078c1.223-0.369 2.278-0.816 3.272-1.362l-0.087 0.044c-0.541-2.072-0.11-3.752 1.299-5.162s3.090-2.225 5.162-1.68c0.502-0.907 0.949-1.962 1.287-3.066l0.031-0.119c-1.844-1.086-3.074-2.659-3.074-4.655zM16 22.956c-3.844 0-6.96-3.116-6.96-6.96s3.116-6.96 6.96-6.96c3.844 0 6.96 3.116 6.96 6.96 0 0.001 0 0.003 0 0.004v-0c-0.002 3.842-3.117 6.956-6.96 6.956v0z"></path>
+            </symbol>
+            <symbol id="icon-calendar" viewBox="0 0 32 32">
+               <title>calendar</title>
+               <path d="M28.43 3.556h-1.6v3.556h-5.689v-3.556h-10.311v3.556h-5.689v-3.556h-1.6c-1.964 0-3.556 1.592-3.556 3.556v0 21.333c0 1.964 1.592 3.556 3.556 3.556v0h24.889c1.964 0 3.556-1.592 3.556-3.556v0-21.333c0-1.964-1.592-3.556-3.556-3.556v0zM28.43 28.444h-24.889v-14.222h24.889v14.222zM9.23 0h-2.489v6.044h2.489v-6.044zM25.23 0h-2.489v6.044h2.489v-6.044z"></path>
+            </symbol>
+            <symbol id="icon-message" viewBox="0 0 37 32">
+               <title>message</title>
+               <path d="M32 0h-27.429c-2.525 0-4.571 2.047-4.571 4.571v0 16c0 2.525 2.047 4.571 4.571 4.571v0h9.143l9.143 6.857v-6.857h9.143c2.525 0 4.571-2.047 4.571-4.571v0-16c0-2.525-2.047-4.571-4.571-4.571v0z"></path>
+            </symbol>
+            <symbol id="icon-arrow" viewBox="0 0 63 32">
+               <title>arrow</title>
+               <path d="M47.418 32l-0.006-10.33-47.411 0.006v-11.373h47.418l-0.006-10.304 15.309 16-15.302 16z"></path>
+            </symbol>
+            <symbol id="icon-art" viewBox="0 0 41 32">
+               <title>art</title>
+               <path d="M36.109 4.56c-6.535-4.345-13.874-5.848-22.573-3.368-6.796 1.962-13.019 9.684-13.499 16.303-0.573 7.819 5.52 14.518 16.248 14.505 11.566 0 15.895-5.566 16-7.255s-4.522-4.804-1.558-8.017c3.714-4.021 7.023-0.594 9.027-1.078s3.019-6.657-3.646-11.091zM22.686 24.173c-1.74-0.005-3.149-1.417-3.149-3.158 0-1.744 1.414-3.158 3.158-3.158s3.158 1.414 3.158 3.158v0c-0.002 1.745-1.417 3.158-3.162 3.158-0.001 0-0.003 0-0.004 0h0z"></path>
+            </symbol>
+            <symbol id="icon-facebook" viewBox="0 0 32 32">
+               <title>facebook</title>
+               <path d="M16 0c-8.837 0-16 7.163-16 16s7.163 16 16 16c8.837 0 16-7.163 16-16v0c0-8.837-7.163-16-16-16v0zM19.79 11.057h-2.407c-0.283 0-0.6 0.373-0.6 0.873v1.737h3v2.477h-3v7.433h-2.843v-7.433h-2.573v-2.477h2.573v-1.457c0-2.090 1.45-3.79 3.44-3.79h2.407v2.637z"></path>
+            </symbol>
+            <symbol id="icon-google-plus" viewBox="0 0 32 32">
+               <title>google-plus</title>
+               <path d="M14.493 11.473c-0.4-1.417-1.047-1.833-2.047-1.833-0.004-0-0.010-0-0.015-0-0.113 0-0.223 0.016-0.327 0.045l0.008-0.002c-0.484 0.159-0.855 0.54-0.997 1.019l-0.003 0.011c-0.102 0.284-0.16 0.611-0.16 0.952 0 0.295 0.044 0.58 0.126 0.848l-0.005-0.021c0.307 1.167 1.137 2 1.973 2 0.005 0 0.010 0 0.015 0 0.113 0 0.223-0.016 0.326-0.045l-0.008 0.002c0.92-0.243 1.493-1.64 1.113-2.977zM16 0c-8.837 0-16 7.163-16 16s7.163 16 16 16c8.837 0 16-7.163 16-16v0c0-8.837-7.163-16-16-16v0zM15.077 22.87c-0.732 0.341-1.589 0.54-2.493 0.54-0.005 0-0.010 0-0.015-0h-0.213c-0.667 0-3.903-0.15-3.903-3.113 0-2.91 3.54-3.137 4.627-3.137h0.033c-0.314-0.404-0.504-0.918-0.504-1.476 0-0.067 0.003-0.133 0.008-0.199l-0.001 0.009h-0.233c-0.015 0-0.032 0-0.050 0-0.673 0-1.303-0.187-1.839-0.513l0.016 0.009c-0.83-0.533-1.25-1.44-1.25-2.7 0-3.55 3.877-3.693 3.917-3.697h3.867v0.080c0 0.433-0.777 0.517-1.31 0.59-0.238 0.021-0.457 0.062-0.668 0.123l0.024-0.006c0.98 0.523 1.14 1.333 1.14 2.573 0.004 0.059 0.006 0.127 0.006 0.197 0 0.986-0.437 1.869-1.128 2.467l-0.004 0.004c-0.357 0.333-0.64 0.573-0.64 0.91s0.387 0.667 0.837 1.067c0.737 0.647 1.743 1.53 1.743 3.017 0 1.52-0.66 2.623-1.967 3.257zM23.547 15.983h-2.527v2.527h-1.6v-2.527h-2.527v-1.6h2.527v-2.527h1.6v2.527h2.527v1.6zM13.037 17.917h-0.26c-0.74 0.043-1.405 0.331-1.924 0.783l0.004-0.003c-0.432 0.361-0.704 0.901-0.704 1.503 0 0.023 0 0.047 0.001 0.070l-0-0.003c0.073 1.183 1.333 1.877 2.89 1.767s2.533-1 2.46-2.17c-0.057-1.090-1.037-1.947-2.467-1.947z"></path>
+            </symbol>
+            <symbol id="icon-music" viewBox="0 0 25 32">
+               <title>music</title>
+               <path d="M21.333 0h-17.778c-1.964 0-3.556 1.592-3.556 3.556v0 24.889c0 1.964 1.592 3.556 3.556 3.556v0h17.778c1.964 0 3.556-1.592 3.556-3.556v0-24.889c0-1.964-1.592-3.556-3.556-3.556v0zM17.422 16.924c-0.423 0.658-0.647 0.377-0.519 0 0.334-0.992 0.32-3.993-2.489-4.434v9.269c0 1.728-0.996 2.812-3.111 3.492-2.048 0.658-4.348-0.025-4.885-1.518s0.672-3.271 2.699-4.011c0.495-0.199 1.070-0.314 1.671-0.314 0.536 0 1.051 0.092 1.529 0.26l-0.032-0.010v-13.056h2.133c0.004 2.244 6.012 5.632 2.997 10.325z"></path>
+            </symbol>
+            <symbol id="icon-pinterst" viewBox="0 0 32 32">
+               <title>pinterst</title>
+               <path d="M16 0.003c-8.837 0-16 7.163-16 16s7.163 16 16 16c8.837 0 16-7.163 16-16v0c0-8.837-7.163-16-16-16v0zM17.093 19.797c-1.027-0.080-1.457-0.587-2.26-1.077-0.443 2.333-0.983 4.54-2.583 5.703-0.493-3.503 0.727-6.137 1.29-8.93-0.963-1.623 0.117-4.893 2.153-4.090 2.503 1-2.17 6.040 0.967 6.667 3.29 0.663 4.623-5.68 2.587-7.733-2.937-2.977-8.543-0.067-7.853 4.197 0.167 1.043 1.243 1.36 0.43 2.797-1.873-0.427-2.44-1.907-2.367-3.883 0.117-3.233 2.907-5.497 5.703-5.81 3.537-0.397 6.86 1.3 7.333 4.627 0.497 3.757-1.617 7.827-5.397 7.533z"></path>
+            </symbol>
+            <symbol id="icon-plus" viewBox="0 0 32 32">
+               <title>plus</title>
+               <path d="M30.345 13.241h-11.586v-11.586c0-1.523-1.236-1.655-2.759-1.655s-2.759 0.132-2.759 1.655v11.586h-11.586c-1.523 0-1.655 1.236-1.655 2.759s0.132 2.759 1.655 2.759h11.586v11.586c0 1.523 1.236 1.655 2.759 1.655s2.759-0.132 2.759-1.655v-11.586h11.586c1.523 0 1.655-1.236 1.655-2.759s-0.132-2.759-1.655-2.759z"></path>
+            </symbol>
+            <symbol id="icon-search" viewBox="0 0 32 32">
+               <title>search</title>
+               <path d="M31.283 27.074l-7.656-7.656c1.132-1.841 1.803-4.071 1.803-6.458 0-0.015-0-0.031-0-0.046v0.002c0-6.923-5.979-12.917-12.897-12.917-0.001 0-0.003 0-0.004 0-6.919 0-12.529 5.609-12.529 12.529 0 0.001 0 0.003 0 0.004v-0c0 6.918 5.995 12.913 12.913 12.913 0.004 0 0.008 0 0.013 0 2.32 0 4.491-0.634 6.352-1.737l-0.058 0.032 7.696 7.696c0.349 0.349 0.831 0.564 1.363 0.564s1.014-0.216 1.363-0.564l1.908-1.908c0.766-0.753 0.486-1.701-0.267-2.455zM3.856 12.533c0-0.001 0-0.003 0-0.004 0-4.79 3.883-8.672 8.672-8.672 0.001 0 0.003 0 0.004 0h-0c4.796 0 9.057 4.286 9.057 9.061-0.002 4.789-3.884 8.67-8.672 8.672h-0c-4.792 0-9.061-4.269-9.061-9.057z"></path>
+            </symbol>
+            <symbol id="icon-twitter" viewBox="0 0 32 32">
+               <title>twitter</title>
+               <path d="M16 0c-8.837 0-16 7.163-16 16s7.163 16 16 16c8.837 0 16-7.163 16-16v0c0-8.837-7.163-16-16-16v0zM22.51 13.107c0 0.137 0 0.27 0 0.407 0 4.163-3.17 8.967-8.967 8.967-0.002 0-0.005 0-0.007 0-1.792 0-3.46-0.528-4.857-1.438l0.034 0.021c0.226 0.028 0.487 0.045 0.752 0.045 1.483 0 2.847-0.507 3.929-1.358l-0.014 0.010c-1.373-0.026-2.528-0.925-2.937-2.164l-0.006-0.022c0.176 0.035 0.379 0.055 0.586 0.055 0.3 0 0.591-0.042 0.866-0.12l-0.022 0.005c-1.451-0.302-2.526-1.57-2.527-3.090v-0s0-0.027 0-0.040c0.411 0.233 0.9 0.376 1.422 0.393l0.005 0c-0.85-0.574-1.402-1.535-1.402-2.624 0-0.583 0.158-1.129 0.433-1.597l-0.008 0.015c1.561 1.91 3.871 3.158 6.475 3.292l0.022 0.001c-0.052-0.215-0.082-0.461-0.082-0.715 0-1.742 1.412-3.153 3.153-3.153 0.906 0 1.722 0.382 2.297 0.993l0.002 0.002c0.754-0.151 1.424-0.416 2.028-0.779l-0.028 0.016c-0.245 0.743-0.735 1.349-1.373 1.735l-0.014 0.008c0.672-0.082 1.283-0.256 1.85-0.513l-0.040 0.016c-0.431 0.64-0.952 1.182-1.552 1.621l-0.018 0.013z"></path>
+            </symbol>
+            <symbol id="icon-user" viewBox="0 0 33 32">
+               <title>user</title>
+               <path d="M26.169 23.908c-4.384-1.596-5.785-2.944-5.785-5.831 0-1.732 1.337-1.166 1.927-4.338 0.245-1.316 1.422-0.021 1.653-3.026 0-1.198-0.644-1.493-0.644-1.493s0.327-1.778 0.455-3.136c0.16-1.707-0.981-6.084-7.065-6.084s-7.221 4.377-7.061 6.087c0.128 1.362 0.455 3.136 0.455 3.136s-0.644 0.299-0.644 1.493c0.224 3.004 1.422 1.71 1.65 3.026 0.587 3.172 1.927 2.606 1.927 4.338 0 2.884-1.401 4.231-5.781 5.831s-7.257 3.221-7.257 4.345v3.744h33.422v-3.744c0-1.124-2.855-2.745-7.253-4.348z"></path>
+            </symbol>
+         </defs>
+      </svg>
+            
+
+      <header>
+         <!-- Top Header Line -->
+         <div class="header-content">
+            <!-- HEADER(site) Title -->
+            <div class="header__site-title">
+               <a href="index.html" class="site-title__link" >
+                  <div class="link__logo">
+                     <svg class="icon icon-logo">
+                        <use xlink:href="#icon-logo"></use>
+                     </svg>
+                  </div>
+                  <div class="link__name">Extra<strong>ordinary</strong></div>
+               </a>
+            </div>
+
+            <!-- HEADER Functional elements -->
+            <div class="header__functional-elements">
+               <ul class="header__functional-list">
+                  <li class="list-item functional-list__item">
+                     <span class="list-item__name">Share</span>
+                     <ul class="list-item__sublist " style="display: none;">
+                        <li class="list-item ">
+                           <a href="#" class="list-item__link">
+                              <span class="link__logo icon-facebook">
+                                 <svg class="icon icon-facebook">
+                                    <use xlink:href="#icon-facebook"></use>
+                                 </svg>
+                              </span>
+                              <span class="link__name">Facebook</span>
+                           </a>
+                        </li>
+                        <li class="list-item">
+                           <a href="#" class="list-item__link">
+                              <span class="link__logo icon-twitter">
+                                 <svg class="icon icon-twitter">
+                                    <use xlink:href="#icon-twitter"></use>
+                                 </svg>
+                              </span>
+                              <span class="link__name">Twitter</span>
+                           </a>
+                        </li>
+                        <li class="list-item">
+                           <a href="#" class="list-item__link">
+                              <span class="link__logo icon-google-plus">
+                                 <svg class="icon icon-google-plus">
+                                    <use xlink:href="#icon-google-plus"></use>
+                                 </svg>
+                              </span>
+                              <span class="link__name">Google +</span>
+                           </a>
+                        </li>
+                        <li class="list-item">
+                           <a href="#" class="list-item__link">
+                              <span class="link__logo icon-pinterest">
+                                 <svg class="icon icon-pinterst">
+                                    <use xlink:href="#icon-pinterst"></use>
+                                 </svg>
+                              </span>
+                              <span class="link__name">Pinterest</span>
+                           </a>
+                        </li>
+                     </ul>
+                  </li>
+
+                  <li class="list-item functional-list__item"> 
+                     <span class="list-item__name icon-search icon">
+                        <svg class="icon icon-search"><use xlink:href="#icon-search"></use></svg>
+                     </span>
+                  </li>
+
+                  <li class="list-item functional-list__item"> 
+                     <span class="list-item__name icon-user icon">
+                        <svg class="icon icon-user"><use xlink:href="#icon-user"></use></svg>
+                     </span>
+                  </li>
+               </ul>
+            </div>
+         </div>
+
+         <!-- Left side NAV bar -->
+         <nav class="header__side-nav">
+            <div class="side-nav__list-top">
+               <!-- Main NAV elements -->
+               <ul class="list side-nav__list">
+                  <!-- Art -->
+                  <li class="list-item side-nav__list-item">
+                     <a href="#" class="list-item__link">
+                        <div class="list-item__container ">
+                           <span class="list-item__name">
+                              <svg class="icon icon-art"><use xlink:href="#icon-art"></use></svg>
+                           </span>
+
+                           <div class="list-item__hidden-content art">
+                              <span class="hidden-content__logo icon-art">
+                                 <svg class="icon icon-art"><use xlink:href="#icon-art"></use></svg>
+                              </span>
+                              <span class="hedden-content__name">Art</span>
+                           </div>
+                        </div>
+                     </a>
+                  </li>
+                  <!-- Music -->
+                  <li class="list-item side-nav__list-item">
+                     <a href="#" class="list-item__link">
+                        <div class="list-item__container ">
+                           <span class="list-item__name">
+                              <svg class="icon icon-music"><use xlink:href="#icon-music"></use></svg>
+                           </span>
+                           <div class="list-item__hidden-content music">
+                              <span class="hidden-content__logo ">
+                                 <svg class="icon icon-music"><use xlink:href="#icon-music"></use></svg>
+                              </span>
+                              <span class="hedden-content__name">Music</span>
+                           </div>
+                        </div>
+                     </a>
+                  </li>
+                  <!-- Photo -->
+                  <li class="list-item side-nav__list-item">
+                     <a href="#" class="list-item__link">
+                        <div class="list-item__container ">
+                           <span class="list-item__name">
+                              <svg class="icon icon-photo"><use xlink:href="#icon-photo"></use></svg>
+                           </span>
+                           <div class="list-item__hidden-content photo">
+                              <span class="hidden-content__logo ">
+                                 <svg class="icon icon-photo"><use xlink:href="#icon-photo"></use></svg>
+                              </span>
+                              <span class="hedden-content__name">Photo</span>
+                           </div>
+                        </div>
+                     </a>
+                  </li>
+                  <!-- Movie -->
+                  <li class="list-item side-nav__list-item">
+                     <a href="#" class="list-item__link">
+                        <div class="list-item__container ">
+                           <span class="list-item__name">
+                              <svg class="icon icon-video"><use xlink:href="#icon-video"></use></svg>
+                           </span>
+                           <div class="list-item__hidden-content video">
+                              <span class="hidden-content__logo ">
+                                 <svg class="icon icon-video"><use xlink:href="#icon-video"></use></svg>
+                              </span>
+                              <span class="hedden-content__name">Movie</span>
+                           </div>
+                        </div>
+                     </a>
+                  </li>
+                  <!-- Busines -->
+                  <li class="list-item side-nav__list-item">
+                     <a href="#" class="list-item__link">
+                        <div class="list-item__container ">
+                           <span class="list-item__name">
+                              <svg class="icon icon-busines"><use xlink:href="#icon-busines"></use></svg>
+                           </span>
+                           <div class="list-item__hidden-content busines">
+                              <span class="hidden-content__logo ">
+                                 <svg class="icon icon-busines"><use xlink:href="#icon-busines"></use></svg>
+                              </span>
+                              <span class="hedden-content__name">Busines</span>
+                           </div>
+                        </div>
+                     </a>
+                  </li>
+                  <!-- Airfly -->
+                  <li class="list-item side-nav__list-item">
+                     <a href="#" class="list-item__link">
+                        <div class="list-item__container ">
+                           <span class="list-item__name">
+                              <svg class="icon icon-airfly"><use xlink:href="#icon-airfly"></use></svg>
+                           </span>
+                           <div class="list-item__hidden-content airfly">
+                              <span class="hidden-content__logo ">
+                                 <svg class="icon icon-airfly"><use xlink:href="#icon-airfly"></use></svg>
+                              </span>
+                              <span class="hedden-content__name">Airfly</span>
+                           </div>
+                        </div>
+                     </a>
+                  </li>
+                  <!-- Trash -->
+                  <li class="list-item side-nav__list-item">
+                     <a href="#" class="list-item__link">
+                        <div class="list-item__container ">
+                           <span class="list-item__name">
+                              <svg class="icon icon-trash"><use xlink:href="#icon-trash"></use></svg>
+                           </span>
+                           <div class="list-item__hidden-content trash">
+                              <span class="hidden-content__logo ">
+                                 <svg class="icon icon-trash"><use xlink:href="#icon-trash"></use></svg>
+                              </span>
+                              <span class="hedden-content__name">Trash</span>
+                           </div>
+                        </div>
+                     </a>
+                  </li>
+                  <!-- Add -->
+                  <li class="list-item side-nav__list-item">
+                     <a href="#" class="list-item__link">
+                        <div class="list-item__container ">
+                           <span class="list-item__name">
+                              <svg class="icon icon-plus"><use xlink:href="#icon-plus"></use></svg>
+                           </span>
+                           <div class="list-item__hidden-content plus">
+                              <span class="hidden-content__logo ">
+                                 <svg class="icon icon-plus"><use xlink:href="#icon-plus"></use></svg>
+                              </span>
+                              <span class="hedden-content__name">Add</span>
+                           </div>
+                        </div>
+                     </a>
+                  </li>
+               </ul>
+            </div>
+
+            <!-- Bottom NAV elements -->
+            <div class="side-nav__list-bottom">
+               <ul class="list side-nav__list">
+                  <!-- Options -->
+                  <li class="list-item side-nav__list-item">
+                     <a href="#" class="list-item__link">
+                        <div class="list-item__container ">
+                           <span class="list-item__name">
+                              <svg class="icon icon-options"><use xlink:href="#icon-options"></use></svg>
+                           </span>
+                           <div class="list-item__hidden-content options">
+                              <span class="hidden-content__logo ">
+                                 <svg class="icon icon-options"><use xlink:href="#icon-options"></use></svg>
+                              </span>
+                              <span class="hedden-content__name">Options</span>
+                           </div>
+                        </div>
+                     </a>
+                  </li>
+               </ul>
+            </div>
+
+         </nav>
+      </header>
+
+      <main class="main-content">
+         <!-- All news / main page -->
+         <div  class="news__container" >
+            <!-- All news in columns -->
+            <ul id="newsList" class="list news-list cards-container" style="display: none;">
+               <li class="list-item card">
+                  <a href="#" class="list-item__link " data-link="" >  
+                     <div class="card__img-top">
+                        <img src="./img/news-img-02-min.jpg" class="card-img" alt="" />
+                        <div class="img-top__show-on-hover" >
+                           <div class="conteiner">
+                              <div class="arrow">
+                                 <svg class="icon icon-arrow"><use xlink:href="#icon-arrow"></use></svg>
+                              </div>
+                              <div class="text">Read more</div>
+                           </div>
+                        </div>
+                     </div>
+
+                     <div class="card__body">
+                        <div class="card__info">
+                           <div class="date">
+                              <svg class="icon icon-calendar"><use xlink:href="#icon-calendar"></use></svg>
+                              <span class="text date">27 July 2018</span>
+                           </div>
+
+                           <div class="comments">
+                              <svg class="icon icon-message"><use xlink:href="#icon-message"></use></svg>
+                              <span class="text number-comments">14 comments</span>
+                           </div>
+                        </div>
+
+                        <div class="card__title">
+                           <h2 class="news-title">All sail being set, he now cast loose the life-line, reserved.y</h2>
+                        </div>
+
+                        <div class="card__content">
+                           <p class="text">
+                              Soon all the boats but Starbuck's were dropped; all the boat-sails  set all the paddles plying; with rippling swiftness, shooting to  leeward; and Ahab heading the onset. A pale, death-glimmer lit up  Fedallah's sunken eyes; a hideous motion.
+                           </p>
+                        </div>
+                     </div> 
+                  </a> 
+               </li>
+
+               <li class="list-item card">
+                  <a href="#" class="list-item__link " data-link="" >  
+                     <div class="card__img-top">
+                        <img src="./img/news-img-01-min.jpg" class="card-img" alt="" />
+                        <div class="img-top__show-on-hover" >
+                           <div class="conteiner">
+                              <div class="arrow">
+                                 <svg class="icon icon-arrow"><use xlink:href="#icon-arrow"></use></svg>
+                              </div>
+                              <div class="text">Read more</div>
+                           </div>
+                        </div>
+                     </div>
+
+                     <div class="card__body">
+                        <div class="card__info">
+                           <div class="date">
+                              <svg class="icon icon-calendar"><use xlink:href="#icon-calendar"></use></svg>
+                              <span class="text date">25 July 2018</span>
+                           </div>
+
+                           <div class="comments">
+                              <svg class="icon icon-message"><use xlink:href="#icon-message"></use></svg>
+                              <span class="text number-comments">2 comments</span>
+                           </div>
+                        </div>
+
+                        <div class="card__title">
+                           <h2 class="news-title">A Strange Brand of Happy</h2>
+                        </div>
+
+                        <div class="card__content">
+                           <p class="text">
+                              An aimless bachelor loses his job and finds himself chasing the same girl (his new life coach) that his manipulative ex-boss is after as well. The boys are spurred on by a rag tag group of retirees in need of some action.
+                           </p>
+                        </div>
+                     </div> 
+                  </a> 
+               </li>
+
+               <li class="list-item card">
+                  <a href="#" class="list-item__link " data-link="" >  
+                     <div class="card__img-top">
+                        <img src="./img/news-img-01-min.jpg" class="card-img" alt="" />
+                        <div class="img-top__show-on-hover" >
+                           <div class="conteiner">
+                              <div class="arrow">
+                                 <svg class="icon icon-arrow"><use xlink:href="#icon-arrow"></use></svg>
+                              </div>
+                              <div class="text">Read more</div>
+                           </div>
+                        </div>
+                     </div>
+
+                     <div class="card__body">
+                        <div class="card__info">
+                           <div class="date">
+                              <svg class="icon icon-calendar"><use xlink:href="#icon-calendar"></use></svg>
+                              <span class="text date">25 July 2018</span>
+                           </div>
+
+                           <div class="comments">
+                              <svg class="icon icon-message"><use xlink:href="#icon-message"></use></svg>
+                              <span class="text number-comments">2 comments</span>
+                           </div>
+                        </div>
+
+                        <div class="card__title">
+                           <h2 class="news-title">A Strange Brand of Happy</h2>
+                        </div>
+
+                        <div class="card__content">
+                           <p class="text">
+                              An aimless bachelor loses his job and finds himself chasing the same girl (his new life coach) that his manipulative ex-boss is after as well. The boys are spurred on by a rag tag group of retirees in need of some action.
+                           </p>
+                        </div>
+                     </div> 
+                  </a> 
+               </li>
+
+                <li class="list-item card">
+                  <a href="#" class="list-item__link " data-link="" >  
+                     <div class="card__img-top">
+                        <img src="./img/news-img-01-min.jpg" class="card-img" alt="" />
+                        <div class="img-top__show-on-hover" >
+                           <div class="conteiner">
+                              <div class="arrow">
+                                 <svg class="icon icon-arrow"><use xlink:href="#icon-arrow"></use></svg>
+                              </div>
+                              <div class="text">Read more</div>
+                           </div>
+                        </div>
+                     </div>
+
+                     <div class="card__body">
+                        <div class="card__info">
+                           <div class="date">
+                              <svg class="icon icon-calendar"><use xlink:href="#icon-calendar"></use></svg>
+                              <span class="text date">25 July 2018</span>
+                           </div>
+
+                           <div class="comments">
+                              <svg class="icon icon-message"><use xlink:href="#icon-message"></use></svg>
+                              <span class="text number-comments">2 comments</span>
+                           </div>
+                        </div>
+
+                        <div class="card__title">
+                           <h2 class="news-title">A Strange Brand of Happy</h2>
+                        </div>
+
+                        <div class="card__content">
+                           <p class="text">
+                              An aimless bachelor loses his job and finds himself chasing the same girl (his new life coach) that his manipulative ex-boss is after as well. The boys are spurred on by a rag tag group of retirees in need of some action.
+                           </p>
+                        </div>
+                     </div> 
+                  </a> 
+               </li>
+
+               <li class="list-item card">
+                  <a href="#" class="list-item__link " data-link="" >  
+                     <div class="card__img-top">
+                        <img src="./img/news-img-01-min.jpg" class="card-img" alt="" />
+                        <div class="img-top__show-on-hover" >
+                           <div class="conteiner">
+                              <div class="arrow">
+                                 <svg class="icon icon-arrow"><use xlink:href="#icon-arrow"></use></svg>
+                              </div>
+                              <div class="text">Read more</div>
+                           </div>
+                        </div>
+                     </div>
+
+                     <div class="card__body">
+                        <div class="card__info">
+                           <div class="date">
+                              <svg class="icon icon-calendar"><use xlink:href="#icon-calendar"></use></svg>
+                              <span class="text date">25 July 2018</span>
+                           </div>
+
+                           <div class="comments">
+                              <svg class="icon icon-message"><use xlink:href="#icon-message"></use></svg>
+                              <span class="text number-comments">2 comments</span>
+                           </div>
+                        </div>
+
+                        <div class="card__title">
+                           <h2 class="news-title">A Strange Brand of Happy</h2>
+                        </div>
+
+                        <div class="card__content">
+                           <p class="text">
+                              An aimless bachelor loses his job and finds himself chasing the same girl (his new life coach) that his manipulative ex-boss is after as well. The boys are spurred on by a rag tag group of retirees in need of some action.
+                           </p>
+                        </div>
+                     </div> 
+                  </a> 
+               </li>
+               <li class="list-item card">
+                  <a href="#" class="list-item__link " data-link="" >  
+                     <div class="card__img-top">
+                        <img src="./img/news-img-02-min.jpg" class="card-img" alt="" />
+                        <div class="img-top__show-on-hover" >
+                           <div class="conteiner">
+                              <div class="arrow">
+                                 <svg class="icon icon-arrow"><use xlink:href="#icon-arrow"></use></svg>
+                              </div>
+                              <div class="text">Read more</div>
+                           </div>
+                        </div>
+                     </div>
+
+                     <div class="card__body">
+                        <div class="card__info">
+                           <div class="date">
+                              <svg class="icon icon-calendar"><use xlink:href="#icon-calendar"></use></svg>
+                              <span class="text date">27 July 2018</span>
+                           </div>
+
+                           <div class="comments">
+                              <svg class="icon icon-message"><use xlink:href="#icon-message"></use></svg>
+                              <span class="text number-comments">14 comments</span>
+                           </div>
+                        </div>
+
+                        <div class="card__title">
+                           <h2 class="news-title">All sail being set, he now cast loose the life-line, reserved.y</h2>
+                        </div>
+
+                        <div class="card__content">
+                           <p class="text">
+                              Soon all the boats but Starbuck's were dropped; all the boat-sails  set all the paddles plying; with rippling swiftness, shooting to  leeward; and Ahab heading the onset. A pale, death-glimmer lit up  Fedallah's sunken eyes; a hideous motion.
+                           </p>
+                        </div>
+                     </div> 
+                  </a> 
+               </li>
+
+               <li class="list-item card">
+                  <a href="#" class="list-item__link " data-link="" >  
+                     <div class="card__img-top">
+                        <img src="./img/news-img-01-min.jpg" class="card-img" alt="" />
+                        <div class="img-top__show-on-hover" >
+                           <div class="conteiner">
+                              <div class="arrow">
+                                 <svg class="icon icon-arrow"><use xlink:href="#icon-arrow"></use></svg>
+                              </div>
+                              <div class="text">Read more</div>
+                           </div>
+                        </div>
+                     </div>
+
+                     <div class="card__body">
+                        <div class="card__info">
+                           <div class="date">
+                              <svg class="icon icon-calendar"><use xlink:href="#icon-calendar"></use></svg>
+                              <span class="text date">25 July 2018</span>
+                           </div>
+
+                           <div class="comments">
+                              <svg class="icon icon-message"><use xlink:href="#icon-message"></use></svg>
+                              <span class="text number-comments">2 comments</span>
+                           </div>
+                        </div>
+
+                        <div class="card__title">
+                           <h2 class="news-title">A Strange Brand of Happy</h2>
+                        </div>
+
+                        <div class="card__content">
+                           <p class="text">
+                              An aimless bachelor loses his job and finds himself chasing the same girl (his new life coach) that his manipulative ex-boss is after as well. The boys are spurred on by a rag tag group of retirees in need of some action.
+                           </p>
+                        </div>
+                     </div> 
+                  </a> 
+               </li>
+            </ul>
+
+
+				<article id="singeNewsView" class="single-news">
+					<div class="news-container">
+						<div id="">
+							<div class="news-title-img" style="background-image: url(img/news-img-02-lg-min.jpg)">
+
+							</div>
+
+							<div class="news-body">
+								<!-- Left side info block -->
+								<div class="news-body__info">
+									<!-- Date -->
+									<div class="news-body__info-cell date">
+										<h6 class="title">Date</h6>
+										<span class="text">27 July 2018</span>
+									</div>
+									<!-- Comments -->
+									<div class="news-body__info-cell comments">
+										<h6 class="title">Comments</h6>
+										<span class="text">28 Comments</span>
+									</div>
+									<!-- Soc links / Share -->
+									<div class="news-body__info-cell share">
+										<h6 class="title">Share</h6>
+										<div class="soc-links">
+											<a href="#" class="soc-links__link facebook">
+												<svg class="icon icon-facebook">
+													<use xlink:href="#icon-facebook"></use>
+												</svg>
+											</a>
+											<a href="#" class="soc-links__link twitter">
+												<svg class="icon icon-twitter">
+													<use xlink:href="#icon-twitter"></use>
+												</svg>
+											</a>
+											<a href="#" class="soc-links__link google-plus">
+												<svg class="icon icon-google-plus">
+													<use xlink:href="#icon-google-plus"></use>
+												</svg>
+											</a>
+											<a href="#" class="soc-links__link pinterst">
+												<svg class="icon icon-pinterst">
+													<use xlink:href="#icon-pinterst"></use>
+												</svg>
+											</a>
+										</div>
+									</div>
+								</div>
+								
+								<div class="news-body__content">
+									<h1 class="content__title">All sail being set, he now cast loose the life-line, reserved.</h1>
+									<h4 class="content__subtitle">With reference to the whaling scene shortly to be described, as well as for the better understanding of all similar scenes elsewhere presented, I have here to speak of the magical, sometimes horrible whale-line.</h4>
+
+									<div class="content__text">
+										<p class="regular-text">
+											Of late years the Manilla rope has in the American fishery almost entirely superseded hemp as a material for whale-lines; for, though not so durable as hemp, it is stronger, and far more soft and elastic; and I will add (since there is an aesthetics in all things), is much more handsome and becoming to the boat, than hemp. Hemp is a dusky, dark fellow, a sort of Indian; but Manilla is as a golden-haired Circassian to behold.
+										</p>
+
+										<div class="image-container">
+											<img src="img/news-subimg-02.jpg" class="sub-image" alt="" />
+											<div class="image-caption">Of late years the Manilla rope has in the American fishery almost entirely superseded hemp as a material for whale-line</div>
+										</div>
+
+										<p class="regular-text">
+											The whale-line is only two-thirds of an inch in thickness. At first sight, you 
+											would not think it so strong as it really is. By experiment its one and fifty 
+											yarns will each suspend a weight of one hundred and twenty pounds; so 
+											that the whole rope will bear a strain nearly equal to three tons. In length, 
+											the common sperm whale-line measures something over two hundred 
+											fathoms. Towards the stern of the boat it is spirally coiled away in the tub, 
+											not like the worm-pipe of a still though, but so as to form one round, 
+											cheese-shaped mass of densely bedded "sheaves," or layers of concentric 
+											spiralizations, without any hollow but the "heart," or minute vertical tube
+											formed at the axis of the cheese. 
+										</p>
+
+										<p class="regular-text">
+											Soon all the boats but Starbuck's were dropped; all the boat-sails set all the 
+											paddles plying; with rippling swiftness, shooting to leeward; and Ahab 
+											heading the onset. A pale, death-glimmer lit up Fedallah's sunken eyes; a 
+											hideous motion. The line originally used in the fishery was of the best hemp 
+											slightly vapoured with tar, not impregnated with it, as in the case of 
+											ordinary ropes; for while tar, as ordinarily used, makes the hemp more 
+											pliable to the rope-maker, and also renders the rope itself more convenient 
+											to the sailor for common ship use; yet, not only would the ordinary quantity 
+											too much stiffen the whale-line for the close coiling to which it must be 
+											subjected; but as most seamen are beginning to learn, tar in general by no 
+											means adds to the rope's durability or strength, however much it may give 
+											it compactness and gloss.
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="news-nav">
+						<div class="news-nav__buttons">
+							<button id="newsClose" class="news-nav__button btn">
+								<svg class="icon icon-close-light"><use xlink:href="#icon-close-light"></use></svg>
+							</button>
+
+							<button id="newsPrev" class="news-nav__button btn">
+								<svg class="icon icon-prev-light"><use xlink:href="#icon-prev-light"></use></svg>
+							</button>
+
+							<button id="newsNext" class="news-nav__button btn">
+								<svg class="icon icon-next-light"><use xlink:href="#icon-next-light"></use></svg>
+							</button>
+						</div>
+					</div>
+
+				</article>
+
+         </div> 
+
+
+      </main>
+
+      <div class="tamplate-blocks" style="display: none;">
+
+			<!-- News List One Item Tamplate -->
+			<div id="newsListItemTamplate">
+				<li class="list-item card">
+					<a href="#" class="list-item__link "  >  
+						<div class="card__img-top">
+							<img src="" class="card-img" alt="" />
+							<div class="img-top__show-on-hover" >
+								<div class="conteiner">
+									<div class="arrow">
+										<svg class="icon icon-arrow"><use xlink:href="#icon-arrow"></use></svg>
+									</div>
+									<div class="text">Read more</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="card__body">
+							<div class="card__info">
+								<div class="date">
+									<svg class="icon icon-calendar"><use xlink:href="#icon-calendar"></use></svg>
+									<span class="text date"></span>
+								</div>
+
+								<div class="comments">
+									<svg class="icon icon-message"><use xlink:href="#icon-message"></use></svg>
+									<span class="text number-comments"> comments</span>
+								</div>
+							</div>
+
+							<div class="card__title">
+								<h2 class="news-title"></h2>
+							</div>
+
+							<div class="card__content">
+								<p class="text">
+								</p>
+							</div>
+						</div> 
+					</a> 
+				</li>
+			</div>
+
+			<!-- Single News View Tamplate -->
+			<div id="singleNewTamplate">
+				<div class="news-title-img" style="background-image: url(img/news-img-02-lg-min.jpg)">
+
+				</div>
+
+				<div class="news-body">
+					<!-- Left side info block -->
+					<div class="news-body__info">
+						<!-- Date -->
+						<div class="news-body__info-cell date">
+							<h6 class="title">Date</h6>
+							<span class="text">27 July 2018</span>
+						</div>
+						<!-- Comments -->
+						<div class="news-body__info-cell comments">
+							<h6 class="title">Comments</h6>
+							<span class="text">28 Comments</span>
+						</div>
+						<!-- Soc links / Share -->
+						<div class="news-body__info-cell share">
+							<h6 class="title">Share</h6>
+							<div class="soc-links">
+								<a href="#" class="soc-links__link facebook">
+									<svg class="icon icon-facebook">
+										<use xlink:href="#icon-facebook"></use>
+									</svg>
+								</a>
+								<a href="#" class="soc-links__link twitter">
+									<svg class="icon icon-twitter">
+										<use xlink:href="#icon-twitter"></use>
+									</svg>
+								</a>
+								<a href="#" class="soc-links__link google-plus">
+									<svg class="icon icon-google-plus">
+										<use xlink:href="#icon-google-plus"></use>
+									</svg>
+								</a>
+								<a href="#" class="soc-links__link pinterst">
+									<svg class="icon icon-pinterst">
+										<use xlink:href="#icon-pinterst"></use>
+									</svg>
+								</a>
+							</div>
+						</div>
+					</div>
+						
+					<div class="news-body__content">
+						<h1 class="content__title">All sail being set, he now cast loose the life-line, reserved.</h1>
+						<h4 class="content__subtitle">With reference to the whaling scene shortly to be described, as well as for the better understanding of all similar scenes elsewhere presented, I have here to speak of the magical, sometimes horrible whale-line.</h4>
+
+						<div class="content__text">
+							<p class="regular-text">
+								Of late years the Manilla rope has in the American fishery almost entirely superseded hemp as a material for whale-lines; for, though not so durable as hemp, it is stronger, and far more soft and elastic; and I will add (since there is an aesthetics in all things), is much more handsome and becoming to the boat, than hemp. Hemp is a dusky, dark fellow, a sort of Indian; but Manilla is as a golden-haired Circassian to behold.
+							</p>
+
+							<div class="image-container">
+								<img src="img/news-subimg-02.jpg" class="sub-image" alt="" />
+								<div class="image-caption">Of late years the Manilla rope has in the American fishery almost entirely superseded hemp as a material for whale-line</div>
+							</div>
+
+							<p class="regular-text">
+								The whale-line is only two-thirds of an inch in thickness. At first sight, you 
+								would not think it so strong as it really is. By experiment its one and fifty 
+								yarns will each suspend a weight of one hundred and twenty pounds; so 
+								that the whole rope will bear a strain nearly equal to three tons. In length, 
+								the common sperm whale-line measures something over two hundred 
+								fathoms. Towards the stern of the boat it is spirally coiled away in the tub, 
+								not like the worm-pipe of a still though, but so as to form one round, 
+								cheese-shaped mass of densely bedded "sheaves," or layers of concentric 
+								spiralizations, without any hollow but the "heart," or minute vertical tube
+								formed at the axis of the cheese. 
+							</p>
+
+							<p class="regular-text">
+								Soon all the boats but Starbuck's were dropped; all the boat-sails set all the 
+								paddles plying; with rippling swiftness, shooting to leeward; and Ahab 
+								heading the onset. A pale, death-glimmer lit up Fedallah's sunken eyes; a 
+								hideous motion. The line originally used in the fishery was of the best hemp 
+								slightly vapoured with tar, not impregnated with it, as in the case of 
+								ordinary ropes; for while tar, as ordinarily used, makes the hemp more 
+								pliable to the rope-maker, and also renders the rope itself more convenient 
+								to the sailor for common ship use; yet, not only would the ordinary quantity 
+								too much stiffen the whale-line for the close coiling to which it must be 
+								subjected; but as most seamen are beginning to learn, tar in general by no 
+								means adds to the rope's durability or strength, however much it may give 
+								it compactness and gloss.
+							</p>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			
+         
+		</div>
+		
+
+
+		<script src="js/jquery-3.2.1.min.js"></script>
+		<!-- <script src="js/script.js"></script> -->
+		<script defer src="js/svgxuse.js"></script>
+		<script>
+			$("#newsClose").on("click touchend", function(e){
+				$("#singeNewsView").hide();
+				$("#newsList").show();
+			});
+		</script>
+   </body>
+</html>

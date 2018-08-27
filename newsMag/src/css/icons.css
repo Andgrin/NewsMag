@@ -1,0 +1,72 @@
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+/* ==========================================
+Single-colored icons can be modified like so:
+.icon-name {
+  font-size: 32px;
+  color: red;
+}
+========================================== */
+
+.icon-close-light {
+  width: 0.994140625em;
+}
+
+.icon-next-light {
+  width: 0.5625em;
+}
+
+.icon-prev-light {
+  width: 0.5625em;
+}
+
+.icon-photo {
+  width: 1.25em;
+}
+
+.icon-logo {
+  width: 1.1181640625em;
+}
+
+.icon-video {
+  width: 1.400390625em;
+}
+
+.icon-busines {
+  width: 1.111328125em;
+}
+
+.icon-airfly {
+  width: 1.0634765625em;
+}
+
+.icon-trash {
+  width: 1.0234375em;
+}
+
+.icon-message {
+  width: 1.142578125em;
+}
+
+.icon-arrow {
+  width: 1.9599609375em;
+}
+
+.icon-art {
+  width: 1.2890625em;
+}
+
+.icon-music {
+  width: 0.77734375em;
+}
+
+.icon-user {
+  width: 1.044921875em;
+}
