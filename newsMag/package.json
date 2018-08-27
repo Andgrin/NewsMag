@@ -9,11 +9,14 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-csso": "^3.0.1"
   },
   "dependencies": {
     "gulp-ruby-sass": "^3.0.0",
     "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.4",
     "gulp-uglify": "^3.0.1",
     "merge-stream": "^1.0.1",
     "pump": "^3.0.0"
