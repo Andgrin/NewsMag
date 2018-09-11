@@ -1,0 +1,408 @@
+
+@mixin icons-colors($size)
+   width: $size
+   height: $size
+   &.icon-art
+      fill: $art-clr
+   &.icon-music
+      fill: $music-clr
+   &.icon-video
+      fill: $video-clr
+   &.icon-photo
+      fill: $photo-clr
+   &.icon-busines
+      fill: $busines-clr
+   &.icon-airfly
+      fill: $airfly-clr
+   &.icon-trash
+      fill: $trash-clr
+   &.icon-plus
+      fill: $plus-clr
+   &.icon-options
+      fill: $options-clr
+
+
+
+
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// ------------------    PAGE HEADER    -------------------
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+.header-content 
+	position: fixed
+	width: 100%
+	background-color: #252525
+	display: flex
+	justify-content: space-between
+	z-index: 100
+	box-sizing: border-box
+	.header__site-title
+		.site-title__link
+			display: table
+			text-decoration: none
+			color: #ffffff
+			height: 100%
+			.link__logo
+				display: table-cell
+				vertical-align: middle
+				color: #e76049
+			.link__name
+				display: table-cell
+				vertical-align: middle
+				font-family: $font-extra-reg
+				text-transform: uppercase
+				strong
+					font-family: $font-extra-bold
+	
+	.header__functional-elements
+		.header__functional-list
+			display: table
+			height: 100%
+			.functional-list__item
+				display: table-cell
+				vertical-align: middle
+				position: relative
+				height: 100%
+				border-right: 1px solid rgba(255,255,255,.05)
+				cursor: pointer
+				.list-item__name
+					text-transform: uppercase
+					color: #ffffff
+					font-family: $font-extra-bold
+					color: #525252
+				.list-item__sublist
+					display: none
+					position: absolute
+					top: calc(100% - 1px) 
+					right: 0
+					border: 1px solid #484848
+					box-shadow: 3px 3px 0 0 rgba(0,0,0,.1)
+					background-color: #ffffff
+					.list-item
+						border-bottom: $def-brdr
+						&:hover
+							background-color: #e7e7e7
+					.list-item__link
+						width: 100%
+						text-decoration: none
+						color: #000000
+						display: table
+						font-family: $font-def-bold
+						text-transform: uppercase
+						.link__logo, .link__name
+							display: table-cell
+							vertical-align: middle
+						.link__logo	
+							border-right: $def-brdr
+							text-align: center
+						.link__name
+
+				&:last-child
+					border-right: none
+				&:hover
+					border-right-color: transparent
+					box-shadow: inset 0 1px 4px 0 rgba(0,0,0,.67)
+					background: linear-gradient(to bottom, rgba(0,0,0,0.24) 0%,rgba(255,255,255,0.24) 300%)
+					.list-item__name
+						color: #ffffff
+					.list-item__sublist
+						display: block !important
+
+//
+//  SIDE NAVIGATION
+//	
+.header__side-nav
+   background-color: #fbfbfb
+   border-right: $def-brdr
+   box-sizing: border-box
+   z-index: 99
+   .nav-list
+      border-top: $def-brdr
+      border-bottom: $def-brdr
+      .list-item
+         border-bottom: $def-brdr
+         &:last-child
+            border-bottom: none
+         .list-link
+            display: block
+            text-decoration: none
+            width: 100%
+            position: relative
+            .container
+               position: absolute
+               top: 0
+               left: 0
+               height: 68px
+               display: table
+               .logo-icon
+                  display: table-cell
+                  vertical-align: middle
+                  text-align: center
+                  min-width: 70px
+                  .icon
+                     @include icons-colors(20px)
+               .name
+                  display: none
+                  opacity: 0
+                  vertical-align: middle
+                  font-family: $font-extra-bold
+                  font-size: 14px
+                  text-transform: uppercase
+                  color: white
+               &.hovered
+                  transition: all .5s ease
+                  .icon
+                     fill: #ffffff
+                  .name
+                     display: table-cell
+                     opacity: 1
+               &:hover
+                  &.art
+                     background-color: $art-clr
+                  &.music
+                     background-color: $music-clr
+                  &.video
+                     background-color: $video-clr
+                  &.photo
+                     background-color: $photo-clr
+                  &.busines
+                     background-color: $busines-clr
+                  &.airfly
+                     background-color: $airfly-clr
+                  &.trash
+                     background-color: $trash-clr
+                  &.plus
+                     background-color: $plus-clr
+                  &.options
+                     background-color: $options-clr
+                  .logo-icon
+                     .icon
+                        fill: #ffffff
+                  .name
+                     padding-right: 20px
+                     text-indent: 0
+                     
+						
+
+
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// ----------------    PAGE WIDTH -767    -----------------
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+@media screen and (max-width: 767px)
+	//  PAGE HEADER
+	.header-content 
+		position: absolute
+		height: 40px
+		.header__site-title
+			margin-left: 12px
+			.site-title__link
+				.link__logo
+					font-size: 12px
+					padding-right: 8px
+					.icon
+						margin-bottom: -1px
+				.link__name
+					font-size: 12px
+				
+		.header__functional-elements
+			.header__functional-list
+				.functional-list__item
+					padding: 0 10px
+					.list-item__name
+						font-size: 11px
+						.icon
+							width: 14px
+							height: 14px
+							font-size: 12px
+					.list-item__sublist
+						min-width: 140px
+						.list-item__link
+							height: 32px
+							font-size: 10px
+							.link__logo
+								width: 32px
+								font-size: 14px
+							.link__name
+								padding-left: 14px
+
+	//  SIDE NAVIGATION
+	.header__side-nav
+		position: absolute
+		top: 40px
+		right: 0
+
+		transform: translate(0, -100%)
+		transition: all .5s ease
+		.list-item__link
+			height: 40px
+		.list-item__name
+			display: none
+		.list-item__hidden-content
+			line-height: 40px
+			color: #525252
+			.icon
+				margin-bottom: -4px
+		&.show
+			transform: translate(0, 0)
+
+
+
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// ---------------    PAGE WIDTH 768 - 992    -------------
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+@media screen and (min-width: 768px) and (max-width: 992px)
+	//  PAGE HEADER
+	.header-content 
+		position: fixed
+		height: 60px
+		.header__site-title
+			margin-left: 32px
+			.site-title__link
+				.link__logo
+					font-size: 15px
+					padding-right: 14px
+					.icon
+						margin-bottom: -2px
+				.link__name
+					font-size: 15px
+
+		.header__functional-elements
+			.header__functional-list
+				.functional-list__item
+					padding: 0 20px
+					.list-item__name
+						font-size: 14px
+						.icon
+							width: 20px
+							height: 20px
+							font-size: 18px
+					.list-item__sublist
+						min-width: 184px
+						.list-item__link
+							height: 44px
+							font-size: 12px
+							.link__logo
+								width: 45px
+								font-size: 20px
+							.link__name
+								padding-left: 22px
+
+	//  SIDE NAVIGATION
+	.header__side-nav
+		position: fixed
+		top: 60px
+		right: 0
+		transform: translate(100%, 0)
+		transition: all .5s ease
+		.list-item__link
+			height: 60px
+		.list-item__name
+			display: none
+		.list-item__hidden-content
+			line-height: 60px
+			color: #525252
+			.icon
+				margin-bottom: -4px
+		&.show
+			transform: translate(0, 0)
+	
+
+
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// -----------------    PAGE WIDTH 993+    ----------------
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+@media screen and (min-width: 993px)
+	//  PAGE HEADER
+	.header-content 
+		position: fixed
+		height: 78px
+		.header__site-title
+			margin-left: 32px
+			.site-title__link
+				.link__logo
+					padding-right: 20px
+					.icon
+						margin-bottom: -2px
+				.link__name
+					font-size: 19px
+				
+		.header__functional-elements
+			.header__functional-list
+				.functional-list__item
+					padding: 0 30px
+					.list-item__name
+						font-size: 14px
+						.icon
+							width: 20px
+							height: 20px
+							font-size: 20px
+					.list-item__sublist
+						min-width: 184px
+						.list-item__link
+							height: 44px
+							font-size: 12px
+							.link__logo
+								width: 45px
+								font-size: 20px
+							.link__name
+								padding-left: 22px
+
+	//  SIDE NAVIGATION
+	.header__side-nav
+		display: block !important
+		position: fixed
+		top: 0
+		left: 0
+		height: 100%
+		width: 70px
+		padding-top: 78px
+		.nav-list
+         .list-item
+            .list-link
+               height: 68px
+               .name
+                  display: block
+                  width: 100%
+                  height: 100%
+                  text-align: center
+                  line-height: 70px
+                  .icon
+                     @include icons-colors(20px)
+               &.hovered
+                  transition: all .5s ease
+                  .icon
+                     fill: #ffffff
+                  .name
+                     display: table-cell
+                     opacity: 1
+               &:hover
+                  &.art
+                     background-color: $art-clr
+                  &.music
+                     background-color: $music-clr
+                  &.video
+                     background-color: $video-clr
+                  &.photo
+                     background-color: $photo-clr
+                  &.busines
+                     background-color: $busines-clr
+                  &.airfly
+                     background-color: $airfly-clr
+                  &.trash
+                     background-color: $trash-clr
+                  &.plus
+                     background-color: $plus-clr
+                  &.options
+                     background-color: $options-clr
+                  .logo-icon
+                     .icon
+                        fill: #ffffff
+                  .name
+                     padding-right: 20px
+                     text-indent: 0
+
+		.side-nav__list-bottom
+			position: absolute
+			bottom: 0
+			width: 100%
+
+

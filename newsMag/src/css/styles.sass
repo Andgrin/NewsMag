@@ -1,23 +1,6 @@
 
-	
-// $small-screen-up: 601px !default
-// $medium-screen-up: 993px !default
-// $large-screen-up: 1201px !default
-// $small-screen: 600px !default
-// $medium-screen: 992px !default
-// $large-screen: 1200px !default
-
-// $medium-and-up: "only screen and (min-width : #{$small-screen-up})" !default
-// $large-and-up: "only screen and (min-width : #{$medium-screen-up})" !default
-// $small-and-down: "only screen and (max-width : #{$small-screen})" !default
-// $medium-and-down: "only screen and (max-width : #{$medium-screen})" !default
-// $medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width : #{$medium-screen})" !default
-
-@mixin column-count($ct) 
-  -webkit-column-count: $ct
-  -moz-column-count: $ct
-  column-count: $ct
-
+@import './reset.css'
+@import './icons.css'
 
 @font-face 
 	font-family: 'Montserrat-Regular'
@@ -51,6 +34,58 @@
    font-weight: normal
    font-style: normal
 
+	
+
+//
+//  VARIABLES
+//
+
+$font-extra-reg: 'Montserrat-Regular', sans-serif
+$font-extra-bold: 'Montserrat-Bold', sans-serif
+
+$font-def-reg: 'OpenSans-Regular', sans-serif
+$font-def-bold: 'OpenSans-Bold', sans-serif
+$font-def-sbold: 'OpenSans-Semibold', sans-serif
+$font-def-ebold: 'OpenSans-ExtraBold', sans-serif
+
+// $small-screen-up: 601px !default
+// $medium-screen-up: 993px !default
+// $large-screen-up: 1201px !default
+// $small-screen: 600px !default
+// $medium-screen: 992px !default
+// $large-screen: 1200px !default
+
+// $medium-and-up: "only screen and (min-width : #{$small-screen-up})" !default
+// $large-and-up: "only screen and (min-width : #{$medium-screen-up})" !default
+// $small-and-down: "only screen and (max-width : #{$small-screen})" !default
+// $medium-and-down: "only screen and (max-width : #{$medium-screen})" !default
+// $medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width : #{$medium-screen})" !default
+
+$def-brdr: 1px solid #e7e7e7
+
+$art-clr: #14b9d6
+$music-clr: #e76049
+$video-clr: #90899c
+$photo-clr: #2eb398
+$busines-clr: #5692b1
+$airfly-clr: #f9b704
+$trash-clr: #dd1787
+$plus-clr: #e76049
+$options-clr: #585858
+
+
+
+
+//
+//  MIXINS
+//
+@mixin column-count($ct) 
+  -webkit-column-count: $ct
+  -moz-column-count: $ct
+  column-count: $ct
+
+
+
 
 
 .d-flex 
@@ -60,31 +95,26 @@
 
 .p-relative 
    position: relative
-
 .p-absolute 
    position: absolute
 
 .align-l 
    text-align: left
-
 .align-c 
    text-align: center
-
 .align-r 
    text-align: right
 
 .hidden
 	display: none
 
-
-	
-.icon.icon-facebook
+.icon-facebook
 	fill: #3360b2
-.icon.icon-twitter
+.icon-twitter
 	fill: #08b0e0
-.icon.icon-google-plus
+.icon-google-plus
 	fill: #ef5c5c 
-.icon.icon-pinterst
+.icon-pinterst
 	fill: #ae0a0a
 
 
@@ -93,305 +123,9 @@
 // ------------------    PAGE STYLES    -------------------
 // <<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-//
-//  PAGE HEADER
-//
-.header-content 
-	position: fixed
-	width: 100%
-	background-color: #252525
-	display: flex
-	justify-content: space-between
-	z-index: 100
-	box-sizing: border-box
-	.header__site-title
-		.site-title__link
-			display: table
-			text-decoration: none
-			color: #ffffff
-			height: 100%
-			.link__logo
-				display: table-cell
-				vertical-align: middle
-				color: #e76049
-			.link__name
-				display: table-cell
-				vertical-align: middle
-				font-family: 'Montserrat-Regular', sans-serif
-				text-transform: uppercase
-				strong
-					font-family: 'Montserrat-Bold', sans-serif
-	
-	.header__functional-elements
-		.header__functional-list
-			display: table
-			height: 100%
-			.functional-list__item
-				display: table-cell
-				vertical-align: middle
-				position: relative
-				height: 100%
-				border-right: 1px solid rgba(255,255,255,.05)
-				cursor: pointer
-				.list-item__name
-					text-transform: uppercase
-					color: #ffffff
-					font-family: 'Montserrat-Bold', sans-serif
-					color: #525252
-				.list-item__sublist
-					display: none
-					position: absolute
-					top: calc(100% - 1px) 
-					right: 0
-					border: 1px solid #484848
-					box-shadow: 3px 3px 0 0 rgba(0,0,0,.1)
-					background-color: #ffffff
-					.list-item
-						border-bottom: 1px solid #e7e7e7
-						&:hover
-							background-color: #e7e7e7
-					.list-item__link
-						width: 100%
-						text-decoration: none
-						color: #000000
-						display: table
-						font-family: 'OpenSans-Bold'
-						text-transform: uppercase
-						.link__logo, .link__name
-							display: table-cell
-							vertical-align: middle
-						.link__logo	
-							border-right: 1px solid #e7e7e7
-							text-align: center
-						.link__name
-
-				&:last-child
-					border-right: none
-				&:hover
-					border-right-color: transparent
-					box-shadow: inset 0 1px 4px 0 rgba(0,0,0,.67)
-					background: linear-gradient(to bottom, rgba(0,0,0,0.24) 0%,rgba(255,255,255,0.24) 300%)
-					.list-item__name
-						color: #ffffff
-					.list-item__sublist
-						display: block !important
-
-
-
-//
-//  SIDE NAVIGATION
-//	
-.header__side-nav
-	background-color: #fbfbfb
-	border-right: 1px solid #e7e7e7
-	box-sizing: border-box
-	z-index: 99
-	.side-nav__list
-		border-top: 1px solid #e7e7e7
-		border-bottom: 1px solid #e7e7e7
-		.side-nav__list-item
-			border-bottom: 1px solid #e7e7e7
-			&:last-child
-				border-bottom: none
-
-			.list-item__link
-				display: block
-				text-decoration: none
-				width: 100%
-				.list-item__container
-					position: relative
-					height: 100%
-					.list-item__hidden-content
-						display: table
-						.hidden-content__logo
-							display: table-cell
-							vertical-align: middle
-							text-align: center
-							min-width: 70px
-							.icon
-								width: 20px
-								height: 20px
-						.hedden-content__name
-							display: table-cell
-							vertical-align: middle
-							font-family: 'Montserrat-Bold', sans-serif
-							font-size: 14px
-							text-transform: uppercase
-							padding-right: 20px
-							
-
-//
-//   NEWS LIST with Cards 
-//
-.cards-container 
-	column-break-inside: avoid
-	.card 
-		box-sizing: border-box
-		display: inline-block
-		overflow: visible
-		border-bottom: 5px solid #e7e7e7
-		overflow: hidden
-		.list-item__link
-			display: block
-			text-decoration: none
-
-		.card__img-top
-			position: relative
-			.card-img
-				width: 100%
-				height: auto
-			.img-top__show-on-hover
-				background-color: rgba(231, 96, 73, .8)
-				position: absolute
-				top: 0
-				left: 0
-				width: 100%
-				height: 100%
-				opacity: 0
-				// transform: translate(0, -100%)
-				z-index: 10
-				.conteiner
-					position: absolute
-					top: 50%
-					left: 50%
-					transform: translate(-50%, -50%)
-					border: 4px solid #ffffff
-					height: 54px
-					color: #ffffff
-					display: table
-					.arrow
-						border-right: 4px solid #ffffff
-						display: table-cell
-						vertical-align: middle
-						padding: 0 18px
-						.icon
-							width: 21px
-					.text
-						display: table-cell
-						vertical-align: middle
-						font-family: 'Montserrat-Bold', sans-serif
-						font-size: 24px
-						padding: 0 17px
-						text-transform: uppercase
-
-		.card__body
-			border-left: 1px solid #e7e7e7
-			border-right: 1px solid #e7e7e7
-			.card__info
-				display: flex
-				justify-content: flex-start
-				font-family: 'OpenSans-Semibold'
-				color: #9d9d9d
-				.date, .comments
-					display: table
-					padding-right: 10px
-				.icon, .text
-					display: table-cell
-					vertical-align: middle
-			.card__title
-				font-family: 'Montserrat-Bold'
-				color: #313131
-			.card__content
-				font-family: 'OpenSans-Regular', sans-serif
-				color: #626262
-
-		&:hover
-			.img-top__show-on-hover
-				transition: all .5s ease
-				opacity: 1
-				// transform: translate(0, 0)
-
-
-
-//
-//   SINGLE NEWS Preview
-//
-.single-news
-	display: flex
-	justify-content: space-between
-	.news-container
-		width: 100%
-
-		.news-title-img
-			width: 100%
-			background-repeat: no-repeat
-			background-size: cover
-			background-position: center
-
-		.news-body
-			.news-body__info
-				box-sizing: border-box
-				.news-body__info-cell
-
-					.title
-						font-family: 'OpenSans-Bold', sans-serif
-						color: #313131
-						padding-bottom: 5px
-					.text
-						font-family: 'OpenSans-Regular', sans-serif
-						color: #585858
-					.soc-links
-						.soc-links__link
-							text-decoration: none
-							&:hover
-								opacity: .7
-
-			.news-body__content
-				.content__title
-					font-family: 'Montserrat-Bold', sans-serif
-					color: #313131
-				.content__subtitle
-					font-family: 'OpenSans-Semibold', sans-serif
-					color: #404040
-
-				.content__text
-					column-gap: 30px
-					font-family: 'OpenSans-Regular', sans-serif
-					color: #626262
-					.regular-text
-						line-height: 22px
-						margin-bottom: 24px
-					.image-container
-						position: relative
-						margin-bottom: 20px
-						.sub-image
-							width: 100%
-							height: auto
-						.image-caption
-							position: absolute
-							bottom: 10px
-							left: 10px
-							margin-right: 10px
-							padding: 10px 22px
-							color: #ffffff
-							background-color: rgba(46, 179, 152, .9)
-							font-family: 'OpenSans-ExtraBold',sans-serif
-							font-size: 12px
-							text-align: center
-							line-height: 18px
-
-	.news-nav
-		.news-nav__buttons
-			border: 1px solid #e7e7e7
-			.news-nav__button
-				border: none
-				border-radius: 0
-				outline: none
-				background-color: #ffffff
-				color: #676767
-				border-bottom: 1px solid #e7e7e7
-				cursor: pointer
-				&:last-child
-					border-bottom: none
-				&:hover
-					background-color: #676767
-					color: #ffffff
-				&.disable
-					pointer-events: none
-					display: none
-
-
-
+@import './partials/header.sass'
+@import './partials/cards.sass'
+@import './partials/singleNews.sass'
 
 
 // <<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -403,134 +137,11 @@
 	.sm-hidden
 		display: none !important
 	
-	//  PAGE HEADER
-	.header-content 
-		position: absolute
-		height: 40px
-		.header__site-title
-			margin-left: 12px
-			.site-title__link
-				.link__logo
-					font-size: 12px
-					padding-right: 8px
-					.icon
-						margin-bottom: -1px
-				.link__name
-					font-size: 12px
-				
-
-		.header__functional-elements
-			.header__functional-list
-				.functional-list__item
-					padding: 0 10px
-					.list-item__name
-						font-size: 11px
-						.icon
-							width: 14px
-							height: 14px
-							font-size: 12px
-					.list-item__sublist
-						min-width: 140px
-						.list-item__link
-							height: 32px
-							font-size: 10px
-							.link__logo
-								width: 32px
-								font-size: 14px
-							.link__name
-								padding-left: 14px
-
-	//  SIDE NAVIGATION
-	.header__side-nav
-		position: absolute
-		top: 40px
-		right: 0
-
-		transform: translate(0, -100%)
-		transition: all .5s ease
-		.list-item__link
-			height: 40px
-		.list-item__name
-			display: none
-		.list-item__hidden-content
-			line-height: 40px
-			color: #525252
-			.icon
-				margin-bottom: -4px
-		&.show
-			transform: translate(0, 0)
-	
 	.main-content
 		padding-top: 40px
 
 	.news__container
 		padding: 10px
-
-	//   NEWS LIST with Cards 
-	.cards-container 
-		@include column-count(1)
-		// column-gap: 20px
-		.card
-			margin-bottom: 10px
-			.card__body
-				padding: 14px
-				.card__info
-					font-size: 11px
-					margin-bottom: 10px
-					.icon
-						width: 12px
-						height: 12px
-						padding: 0 6px 0 2px
-				.card__title
-					font-size: 16px
-					margin: 14px 0 6px
-				.card__content
-					font-size: 13px
-					line-height: 18px
-
-	//   SINGLE NEWS Preview
-	.single-news
-		.news-container
-			.news-title-img
-				height: 150px
-				margin-bottom: 14px
-			.news-body
-				
-				.news-body__info
-					display: flex
-					justify-content: space-between
-					margin-bottom: 8px
-					.news-body__info-cell
-						text-align: left
-						padding: 4px 4px 8px
-						
-						.title, .text
-							font-size: 9px
-						.soc-links
-							
-							.soc-links__link
-								font-size: 16px
-
-				.news-body__content
-					.content__title
-						font-size: 20px
-						line-height: 28px
-					.content__subtitle
-						font-size: 16px
-						line-height: 20px
-					.content__text
-						font-size: 13px
-						padding: 14px 0 20px 
-
-		.news-nav
-			min-width: 26px
-			max-width: 26px
-			margin-left: 10px
-			.news-nav__buttons
-				.news-nav__button
-					width: 24px
-					height: 24px
-					font-size: 12px
 
 
 
@@ -542,141 +153,11 @@
 	.md-hidden
 		display: none !important
 
-	//  PAGE HEADER
-	.header-content 
-		position: fixed
-		height: 60px
-		.header__site-title
-			margin-left: 32px
-			.site-title__link
-				.link__logo
-					font-size: 15px
-					padding-right: 14px
-					.icon
-						margin-bottom: -2px
-				.link__name
-					font-size: 15px
-				
-
-		.header__functional-elements
-			.header__functional-list
-				.functional-list__item
-					padding: 0 20px
-					.list-item__name
-						font-size: 14px
-						.icon
-							width: 20px
-							height: 20px
-							font-size: 18px
-					.list-item__sublist
-						min-width: 184px
-						.list-item__link
-							height: 44px
-							font-size: 12px
-							.link__logo
-								width: 45px
-								font-size: 20px
-							.link__name
-								padding-left: 22px
-
-	//  SIDE NAVIGATION
-	.header__side-nav
-		position: fixed
-		top: 60px
-		right: 0
-		transform: translate(100%, 0)
-		transition: all .5s ease
-		.list-item__link
-			height: 60px
-		.list-item__name
-			display: none
-		.list-item__hidden-content
-			line-height: 60px
-			color: #525252
-			.icon
-				margin-bottom: -4px
-		&.show
-			transform: translate(0, 0)
-	
 	.main-content
 		padding-top: 60px
 
 	.news__container
 		padding: 20px
-
-	//   NEWS LIST with Cards 
-	.cards-container 
-		@include column-count(2)
-		column-gap: 20px
-		.card
-			margin-bottom: 20px
-			.card__body
-				padding: 20px
-				.card__info
-					font-size: 12px
-					margin-bottom: 20px
-					.icon
-						width: 14px
-						height: 14px
-						padding: 0 6px 0 2px
-				.card__title
-					font-size: 20px
-					margin: 22px 0 12px
-				.card__content
-					font-size: 14px
-					line-height: 22px
-
-	//   SINGLE NEWS Preview
-	.single-news
-		.news-container
-			.news-title-img
-				height: 350px
-				margin-bottom: 24px
-			.news-body
-				display: flex
-				justify-content: space-between
-				.news-body__info
-					width: 20%
-					margin-right: 20px
-					text-align: right
-					&:last-child
-						border-bottom: none
-					.news-body__info-cell
-						padding: 8px 8px 14px
-						margin-bottom: 8px
-						border-bottom: 1px solid #e7e7e7
-						.title, .text
-							font-size: 12px
-						.soc-links
-							padding: 10px 0
-							.soc-links__link
-								font-size: 20px
-
-				.news-body__content
-					width: 80%
-					.content__title
-						font-size: 34px
-						line-height: 46px
-						// margin-bottom: 8px
-					.content__subtitle
-						font-size: 18px
-						line-height: 24px
-					.content__text
-						font-size: 14px
-						padding: 22px 100px 26px 0
-
-		.news-nav
-			min-width: 50px
-			max-width: 50px
-			margin-left: 20px
-			.news-nav__buttons
-				.news-nav__button
-					width: 48px
-					height: 46px
-					font-size: 15px
-
-
-
 
 
 
@@ -685,125 +166,8 @@
 // <<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 @media screen and (min-width: 993px)
-
-
 	.lg-hidden
 		display: none !important
-
-	//  PAGE HEADER
-	.header-content 
-		position: fixed
-		height: 78px
-		.header__site-title
-			margin-left: 32px
-			.site-title__link
-				.link__logo
-					padding-right: 20px
-					.icon
-						margin-bottom: -2px
-				.link__name
-					font-size: 19px
-				
-
-		.header__functional-elements
-			.header__functional-list
-				.functional-list__item
-					padding: 0 30px
-					.list-item__name
-						font-size: 14px
-						.icon
-							width: 20px
-							height: 20px
-							font-size: 20px
-					.list-item__sublist
-						min-width: 184px
-						.list-item__link
-							height: 44px
-							font-size: 12px
-							.link__logo
-								width: 45px
-								font-size: 20px
-							.link__name
-								padding-left: 22px
-
-	//  SIDE NAVIGATION
-	.header__side-nav
-		display: block !important
-		position: fixed
-		top: 0
-		left: 0
-		height: 100%
-		width: 70px
-		padding-top: 78px
-		.side-nav__list
-			.side-nav__list-item
-				.list-item__link
-					height: 68px
-					.list-item__name
-						display: block
-						width: 100%
-						height: 100%
-						text-align: center
-						line-height: 70px
-						.icon
-							width: 20px
-							height: 20px
-						.icon.icon-art
-							fill: #14b9d6
-						.icon.icon-music
-							fill: #e76049
-						.icon.icon-video
-							fill: #90899c
-						.icon.icon-photo
-							fill: #2eb398
-						.icon.icon-busines
-							fill: #5692b1
-						.icon.icon-airfly
-							fill: #f9b704
-						.icon.icon-trash
-							fill: #dd1787
-						.icon.icon-plus
-							fill: #e76049
-						.icon.icon-options
-							fill: #585858
-
-					.list-item__hidden-content
-						display: table
-						height: 100%
-						position: absolute
-						top: 0
-						left: 0
-						color: #ffffff
-						transform: translate(-100%, 0)
-						transition: all .5s ease
-						&.art
-							background-color: #14b9d6
-						&.music
-							background-color: #e76049
-						&.video
-							background-color: #90899c
-						&.photo
-							background-color: #2eb398
-						&.busines
-							background-color: #5692b1
-						&.airfly
-							background-color: #f9b704
-						&.trash
-							background-color: #dd1787
-						&.plus
-							background-color: #e76049
-						&.options
-							background-color: #585858
-					//hovered card
-					&:hover
-						.list-item__hidden-content
-							transform: translate(0, 0)
-
-		.side-nav__list-bottom
-			position: absolute
-			bottom: 0
-			width: 100%
-
 
 	.main-content
 		padding-left: 70px
@@ -811,76 +175,3 @@
 
 	.news__container
 		padding: 30px
-
-	//   NEWS LIST with Cards 
-	.cards-container 
-		@include column-count(3)
-		column-gap: 30px
-		.card
-			margin-bottom: 30px
-			.card__body
-				padding: 28px 28px 24px
-				.card__info
-					font-size: 12px
-					margin-bottom: 20px
-					.icon
-						width: 14px
-						height: 14px
-						padding: 0 6px 0 2px
-				.card__title
-					font-size: 26px
-					margin: 22px 0 12px
-				.card__content
-					font-size: 14px
-					line-height: 22px
-
-	//   SINGLE NEWS Preview
-	.single-news
-		.news-container
-			.news-title-img
-				height: 555px
-				margin-bottom: 36px
-			.news-body
-				display: flex
-				justify-content: space-between
-				.news-body__info
-					width: 20%
-					margin-right: 30px
-					padding-left: 70px
-					text-align: right
-					&:last-child
-						border-bottom: none
-					.news-body__info-cell
-						padding: 8px 8px 18px
-						margin-bottom: 10px
-						border-bottom: 1px solid #e7e7e7
-						.title, .text
-							font-size: 13px
-						.soc-links
-							padding: 10px 0
-							.soc-links__link
-								font-size: 26px
-
-				.news-body__content
-					width: 80%
-					.content__title
-						font-size: 50px
-						line-height: 56px
-						margin-bottom: 10px
-					.content__subtitle
-						font-size: 20px
-						line-height: 28px
-					.content__text
-						@include column-count(2)
-						font-size: 14px
-						padding: 22px 100px 26px 0
-
-		.news-nav
-			min-width: 70px
-			max-width: 70px
-			margin-left: 30px
-			.news-nav__buttons
-				.news-nav__button
-					width: 68px
-					height: 66px
-					font-size: 18px

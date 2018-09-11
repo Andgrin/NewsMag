@@ -1,0 +1,245 @@
+
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// ---------------    SINGLE NEWS Preview    --------------
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+.single-news
+	display: flex
+	justify-content: space-between
+	.news-container
+		width: 100%
+
+		.news-title-img
+			width: 100%
+			background-repeat: no-repeat
+			background-size: cover
+			background-position: center
+
+		.news-body
+			.news-body__info
+				box-sizing: border-box
+				.news-body__info-cell
+
+					.title
+						font-family: $font-def-bold
+						color: #313131
+						padding-bottom: 5px
+					.text
+						font-family: $font-def-reg
+						color: #585858
+					.soc-links
+						.soc-links__link
+							text-decoration: none
+							&:hover
+								opacity: .7
+
+			.news-body__content
+				.content__title
+					font-family: $font-def-bold
+					color: #313131
+				.content__subtitle
+					font-family: $font-def-sbold
+					color: #404040
+
+				.content__text
+					column-gap: 30px
+					font-family: $font-def-reg
+					color: #626262
+					.regular-text
+						line-height: 22px
+						margin-bottom: 24px
+					.image-container
+						position: relative
+						margin-bottom: 20px
+						.sub-image
+							width: 100%
+							height: auto
+						.image-caption
+							position: absolute
+							bottom: 10px
+							left: 10px
+							margin-right: 10px
+							padding: 10px 22px
+							color: #ffffff
+							background-color: rgba(46, 179, 152, .9)
+							font-family: $font-def-ebold
+							font-size: 12px
+							text-align: center
+							line-height: 18px
+
+	.news-nav
+		.news-nav__buttons
+			border: $def-brdr
+			.news-nav__button
+				border: none
+				border-radius: 0
+				outline: none
+				background-color: #ffffff
+				color: #676767
+				border-bottom: $def-brdr
+				cursor: pointer
+				&:last-child
+					border-bottom: none
+				&:hover
+					background-color: #676767
+					color: #ffffff
+				&.disable
+					pointer-events: none
+					display: none
+
+
+
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// ----------------    PAGE WIDTH -767    -----------------
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+@media screen and (max-width: 767px)
+   .single-news
+      .news-container
+         .news-title-img
+            height: 150px
+            margin-bottom: 14px
+         .news-body
+            
+            .news-body__info
+               display: flex
+               justify-content: space-between
+               margin-bottom: 8px
+               .news-body__info-cell
+                  text-align: left
+                  padding: 4px 4px 8px
+                  
+                  .title, .text
+                     font-size: 9px
+                  .soc-links
+                     
+                     .soc-links__link
+                        font-size: 16px
+
+            .news-body__content
+               .content__title
+                  font-size: 20px
+                  line-height: 28px
+               .content__subtitle
+                  font-size: 16px
+                  line-height: 20px
+               .content__text
+                  font-size: 13px
+                  padding: 14px 0 20px 
+
+      .news-nav
+         min-width: 26px
+         max-width: 26px
+         margin-left: 10px
+         .news-nav__buttons
+            .news-nav__button
+               width: 24px
+               height: 24px
+               font-size: 12px
+
+
+
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// ---------------    PAGE WIDTH 768 - 992    -------------
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+@media screen and (min-width: 768px) and (max-width: 992px)
+   .single-news
+      .news-container
+         .news-title-img
+            height: 350px
+            margin-bottom: 24px
+         .news-body
+            display: flex
+            justify-content: space-between
+            .news-body__info
+               width: 20%
+               margin-right: 20px
+               text-align: right
+               &:last-child
+                  border-bottom: none
+               .news-body__info-cell
+                  padding: 8px 8px 14px
+                  margin-bottom: 8px
+                  border-bottom: $def-brdr
+                  .title, .text
+                     font-size: 12px
+                  .soc-links
+                     padding: 10px 0
+                     .soc-links__link
+                        font-size: 20px
+
+            .news-body__content
+               width: 80%
+               .content__title
+                  font-size: 34px
+                  line-height: 46px
+                  // margin-bottom: 8px
+               .content__subtitle
+                  font-size: 18px
+                  line-height: 24px
+               .content__text
+                  font-size: 14px
+                  padding: 22px 100px 26px 0
+
+      .news-nav
+         min-width: 50px
+         max-width: 50px
+         margin-left: 20px
+         .news-nav__buttons
+            .news-nav__button
+               width: 48px
+               height: 46px
+               font-size: 15px
+
+
+
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// -----------------    PAGE WIDTH 993+    ----------------
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+@media screen and (min-width: 993px)
+   .single-news
+      .news-container
+         .news-title-img
+            height: 555px
+            margin-bottom: 36px
+         .news-body
+            display: flex
+            justify-content: space-between
+            .news-body__info
+               width: 20%
+               margin-right: 30px
+               padding-left: 70px
+               text-align: right
+               &:last-child
+                  border-bottom: none
+               .news-body__info-cell
+                  padding: 8px 8px 18px
+                  margin-bottom: 10px
+                  border-bottom: $def-brdr
+                  .title, .text
+                     font-size: 13px
+                  .soc-links
+                     padding: 10px 0
+                     .soc-links__link
+                        font-size: 26px
+
+            .news-body__content
+               width: 80%
+               .content__title
+                  font-size: 50px
+                  line-height: 56px
+                  margin-bottom: 10px
+               .content__subtitle
+                  font-size: 20px
+                  line-height: 28px
+               .content__text
+                  @include column-count(2)
+                  font-size: 14px
+                  padding: 22px 100px 26px 0
+
+      .news-nav
+         min-width: 70px
+         max-width: 70px
+         margin-left: 30px
+         .news-nav__buttons
+            .news-nav__button
+               width: 68px
+               height: 66px

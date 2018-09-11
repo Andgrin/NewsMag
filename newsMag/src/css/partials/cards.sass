@@ -1,0 +1,162 @@
+
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// --------------    NEWS LIST with Cards   ---------------
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+.cards-container 
+	column-break-inside: avoid
+	.card 
+		box-sizing: border-box
+		display: inline-block
+		overflow: visible
+		border-bottom: 5px solid #e7e7e7
+		overflow: hidden
+		.list-item__link
+			display: block
+			text-decoration: none
+
+		.card__img-top
+			position: relative
+			.card-img
+				width: 100%
+				height: auto
+			.img-top__show-on-hover
+				background-color: rgba(231, 96, 73, .8)
+				position: absolute
+				top: 0
+				left: 0
+				width: 100%
+				height: 100%
+				opacity: 0
+				// transform: translate(0, -100%)
+				z-index: 10
+				.conteiner
+					position: absolute
+					top: 50%
+					left: 50%
+					transform: translate(-50%, -50%)
+					border: 4px solid #ffffff
+					height: 54px
+					color: #ffffff
+					display: table
+					.arrow
+						border-right: 4px solid #ffffff
+						display: table-cell
+						vertical-align: middle
+						padding: 0 18px
+						.icon
+							width: 21px
+					.text
+						display: table-cell
+						vertical-align: middle
+						font-family: $font-extra-bold
+						font-size: 24px
+						padding: 0 17px
+						text-transform: uppercase
+
+		.card__body
+			border-left: $def-brdr
+			border-right: $def-brdr
+			.card__info
+				display: flex
+				justify-content: flex-start
+				font-family: $font-def-sbold
+				color: #9d9d9d
+				.date, .comments
+					display: table
+					padding-right: 10px
+				.icon, .text
+					display: table-cell
+					vertical-align: middle
+			.card__title
+				font-family: $font-extra-bold
+				color: #313131
+			.card__content
+				font-family: $font-extra-reg
+				color: #626262
+
+		&:hover
+			.img-top__show-on-hover
+				transition: all .5s ease
+				opacity: 1
+				// transform: translate(0, 0)
+
+
+
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// ----------------    PAGE WIDTH -767    -----------------
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+@media screen and (max-width: 767px)
+   .cards-container 
+      @include column-count(1)
+      // column-gap: 20px
+      .card
+         margin-bottom: 10px
+         .card__body
+            padding: 14px
+            .card__info
+               font-size: 11px
+               margin-bottom: 10px
+               .icon
+                  width: 12px
+                  height: 12px
+                  padding: 0 6px 0 2px
+            .card__title
+               font-size: 16px
+               margin: 14px 0 6px
+            .card__content
+               font-size: 13px
+               line-height: 18px
+
+
+
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// ---------------    PAGE WIDTH 768 - 992    -------------
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+@media screen and (min-width: 768px) and (max-width: 992px)
+	.cards-container 
+		@include column-count(2)
+		column-gap: 20px
+		.card
+			margin-bottom: 20px
+			.card__body
+				padding: 20px
+				.card__info
+					font-size: 12px
+					margin-bottom: 20px
+					.icon
+						width: 14px
+						height: 14px
+						padding: 0 6px 0 2px
+				.card__title
+					font-size: 20px
+					margin: 22px 0 12px
+				.card__content
+					font-size: 14px
+					line-height: 22px
+
+
+
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// -----------------    PAGE WIDTH 993+    ----------------
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+@media screen and (min-width: 993px)
+	.cards-container 
+		@include column-count(3)
+		column-gap: 30px
+		.card
+			margin-bottom: 30px
+			.card__body
+				padding: 28px 28px 24px
+				.card__info
+					font-size: 12px
+					margin-bottom: 20px
+					.icon
+						width: 14px
+						height: 14px
+						padding: 0 6px 0 2px
+				.card__title
+					font-size: 26px
+					margin: 22px 0 12px
+				.card__content
+					font-size: 14px
+					line-height: 22px

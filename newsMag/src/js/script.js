@@ -1,29 +1,27 @@
 
-'use strict';
+//= ../../node_modules/jquery/dist/jquery.js
 
 
-var NewsPage = function() {
+(function() {
    console.log("init NEW  NewsPage");
 
    var newsList = $("#newsList"),
 		 singeNewsView = $("#singeNewsView"),
-		 singeNewsViewContainer = $("#singeNewsView .news-container");
+		 singeNewsViewContainer = $("#singeNewsView .news-container"),
 
-   // Create Tamplates Clones  
-   var newsListItemTamplate = $("#newsListItemTamplate"),
-		 singleNewTamplate = $("#singleNewTamplate");
+      // Create Tamplates Clones  
+       newsListItemTamplate = $("#newsListItemTamplate"),
+		 singleNewTamplate = $("#singleNewTamplate"),
 
-	// Single News preview buttons		
-	var btnCloseNews = $("#newsClose"),
+	   // Single News preview buttons		
+	    btnCloseNews = $("#newsClose"),
 		 btnNextNews = $("#newsNext"),
-		 btnNewsPrev = $("#newsPrev");
+		 btnNewsPrev = $("#newsPrev"),
 
-	var currentSingleNewsViewId = 0,
+	    currentSingleNewsViewId = 0,
 		 minNewsId = 0,
 		 maxNewsId = 0;
 
-
-	
 
 	//
 	//  NEWS LIST Functions
@@ -55,7 +53,6 @@ var NewsPage = function() {
 
 	//   Render news list items
 	function renderNewsListItem (data) {
-
 		var item = newsListItemTamplate.clone(),
 			 commentsText = function() {
 				if (data.comments === 1) {
@@ -81,7 +78,6 @@ var NewsPage = function() {
 		});
 
 		newsList.append(item);
-
 	}
 
 
@@ -158,7 +154,6 @@ var NewsPage = function() {
 		// Check if buttons can be clicked
 		isButtomCanBeActive(btnNewsPrev, data.id, minNewsId);
 		isButtomCanBeActive(btnNextNews ,data.id, maxNewsId);
-
 	}
 
 	//   Check if buttons can be clicked
@@ -173,6 +168,14 @@ var NewsPage = function() {
 
 	
 
+
+
+
+   $(".header__side-nav .list .container").on("mouseenter", function(){
+      $(this).addClass("hovered");
+   }).on("mouseleave", function(){
+      $(this).removeClass("hovered");
+   });
 
    //
    //   BUTTONS EVENTS
@@ -201,4 +204,4 @@ var NewsPage = function() {
 	//  LOAD NEWS LIST
 	loadNewsList();
 
-}
+})();

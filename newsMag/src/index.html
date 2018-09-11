@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Extraordinary</title>
+		
+		<!-- <link rel="stylesheet" href="css/reset.css"> -->
+		<link rel="stylesheet" href="css/styles.css">
+   </head>
+
+   <body>
+      <!-- SVG Icons -->
+      //= template/iconsSvg.html
+           
+      <!-- HEADER -->
+      //= template/header.html
+
+      <main class="main-content">
+         <!-- All news / main page -->
+         <div  class="news__container" >
+            <!-- All news in columns -->
+            <ul id="newsList" class="list news-list cards-container" >
+               
+            </ul>
+
+
+				<article id="singeNewsView" class="single-news" style="display: none;">
+					<div class="news-container"></div>
+
+					<div class="news-nav">
+						<div class="news-nav__buttons">
+							<button id="newsClose" class="news-nav__button btn">
+								<svg class="icon icon-close-light"><use xlink:href="#icon-close-light"></use></svg>
+							</button>
+
+							<button id="newsPrev" class="news-nav__button btn">
+								<svg class="icon icon-prev-light"><use xlink:href="#icon-prev-light"></use></svg>
+							</button>
+
+							<button id="newsNext" class="news-nav__button btn">
+								<svg class="icon icon-next-light"><use xlink:href="#icon-next-light"></use></svg>
+							</button>
+						</div>
+					</div>
+				</article>
+
+         </div> 
+      </main>
+
+		<!-- PAGE TAMPLATES -->
+      <div class="tamplate-blocks" style="display: none;">
+         <!-- News List One Item Tamplate -->
+         //= template/cardTemplate.html
+			
+         <!-- Single News View Tamplate -->
+         //= template/newsTemplate.html
+		</div>
+		
+		<!-- <script src="js/jquery-3.2.1.min.js"></script> -->
+		<script src="js/script.js"></script>
+		<script defer src="js/svgxuse.js"></script>
+		
+   </body>
+</html>
