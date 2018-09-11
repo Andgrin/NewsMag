@@ -11,13 +11,13 @@ var gulp = require('gulp'),
     browserSync = require("browser-sync"),
     reload = browserSync.reload,
 
-    minifyCSS = require('gulp-csso'),
-    concat = require('gulp-concat'),
-    sourcemaps = require('gulp-sourcemaps'),
+   //  minifyCSS = require('gulp-csso'),
+   //  concat = require('gulp-concat'),
+   //  sourcemaps = require('gulp-sourcemaps'),
     sass = require('gulp-sass'),
-    merge = require('merge-stream'),
-    uglify = require('gulp-uglify'),
-    pump = require('pump');
+   //  merge = require('merge-stream'),
+    uglify = require('gulp-uglify');
+   //  pump = require('pump');
 
 
 var path = {
@@ -26,21 +26,24 @@ var path = {
       js: 'build/js/',
       css: 'build/css/',
       img: 'build/img/',
-      fonts: 'build/fonts/'
+      fonts: 'build/fonts/',
+      icons: 'build/icons/'
    },
    src: {
       html: 'src/*.html',
       js: 'src/js/script.js',
       style: 'src/css/styles.sass',
       img: 'src/img/**/*.*',
-      fonts: 'src/fonts/**/*.*'
+      fonts: 'src/fonts/**/*.*',
+      icons: 'src/icons/**/*.*',
    },
    watch: {
       html: 'src/**/*.html',
       js: 'src/js/**/*.js',
       style: 'src/css/**/*.sass',
       img: 'src/img/**/*.*',
-      fonts: 'src/fonts/**/*.*'
+      fonts: 'src/fonts/**/*.*',
+      icons: 'src/icons/**/*.*'
    }
 };
   
@@ -90,21 +93,26 @@ gulp.task('style:build', function () {
       .pipe(reload({stream: true}));
 });
 
-// gulp.task('image:build', function () {
-//    gulp.src(path.src.img) 
-//       .pipe(imagemin({
-//          progressive: true,
-//          svgoPlugins: [{removeViewBox: false}],
-//          use: [pngquant()],
-//          interlaced: true
-//       }))
-//       .pipe(gulp.dest(path.build.img))
-//       .pipe(reload({stream: true}));
-// });
+gulp.task('image:build', function () {
+   gulp.src(path.src.img) 
+      .pipe(imagemin({
+         progressive: true,
+         svgoPlugins: [{removeViewBox: false}],
+         use: [pngquant()],
+         interlaced: true
+      }))
+      .pipe(gulp.dest(path.build.img))
+      .pipe(reload({stream: true}));
+});
 
 gulp.task('fonts:build', function() {
    gulp.src(path.src.fonts)
       .pipe(gulp.dest(path.build.fonts))
+});
+
+gulp.task('icons:build', function() {
+   gulp.src(path.src.icons)
+      .pipe(gulp.dest(path.build.icons))
 });
 
 gulp.task('build', [
@@ -112,7 +120,8 @@ gulp.task('build', [
    'js:build',
    'style:build',
    'fonts:build',
-   // 'image:build'
+   'image:build',
+   'icons:build'
 ]);
 
 
@@ -136,39 +145,3 @@ gulp.task('watch', function(){
 
 
 gulp.task('default', ['build', 'webserver', 'watch']);
-
-
-
-// gulp.task('styles', function() {
-
-//    var sassStream = gulp.src('src/css/styles.sass')
-//        .pipe(sass())
-//        .pipe(concat('scss-files.css'))
-//    ;
-   
-//    var cssStream = gulp.src('src/css/*.css')
-//        .pipe(concat('css-files.css'))
-//    ;
-
-//    var mergedStream = merge( sassStream, cssStream)
-//        .pipe(concat('styles.css'))
-//        .pipe(minifyCSS())
-//        .pipe(gulp.dest('public/css'));
-
-//    return mergedStream;
-// });
-
-
-
-
-// gulp.task('scripts', function (cb) {
-//    pump([
-//          gulp.src('src/js/*.js'),
-//          uglify(),
-//          gulp.dest('public/js')
-//       ],
-//       cb
-//    );
-// });
-
-// gulp.task('default', [ 'styles', 'scripts' ]);
